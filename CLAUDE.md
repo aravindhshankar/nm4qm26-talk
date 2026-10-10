@@ -28,21 +28,32 @@ talk/figures/           all figures, included with plain \includegraphics{figure
                         tbg_*.png crops from the published TBG paper. Map: notes/paper_notes.md
 talk/nm4qm_talk.pdf     tracked: a working presentation is always in the repo
 talk/build.sh           the USER's build script: builds and opens the PDF (-w = live preview)
+talk/preview.tex        section preview: same preamble, one \input line. Builds preview.pdf
+                        (gitignored) so a single section can be iterated on alone.
 ```
-Subagent build: `cd talk && latexmk -pdf -interaction=nonstopmode nm4qm_talk.tex`, then
-`latexmk -c` and remove `*.nav *.snm`. Do not run `build.sh` from a subagent (it opens a window).
+Subagent build while iterating on a section: put that section in `talk/preview.tex`, then
+`cd talk && latexmk -g -pdf -interaction=nonstopmode preview.tex` (short log, pages start at 1).
+Before a commit: one full build, `latexmk -g -pdf -interaction=nonstopmode nm4qm_talk.tex`,
+so the tracked PDF is always the whole talk. After either: `latexmk -c`, remove `*.nav *.snm`.
+macOS has no `timeout` command. Do not run `build.sh` from a subagent (it opens a window).
 
 ## Who does what (token efficiency)
 - Opus (the main session) talks with the user and thinks: structure, physics, wording, critique.
-- Opus does not edit .tex, compile, or check formatting itself. That goes to a subagent:
-  - haiku: mechanical work (text edits to an agreed spec, compile and check, renames, swapping a figure file).
-  - sonnet: anything with design in it (a new frame, TikZ, layout problems, figure crops).
+- Building from scratch goes to a subagent:
+  - sonnet: a new frame, a new TikZ drawing, figure crops, a first layout.
+  - haiku: mechanical bulk work (renames, swapping a figure file, the same edit in many places).
   - Pick by a quick guess. Do not spend tokens deciding which model to use.
+- Fine-tuning an existing frame is done by Opus directly (user, 2026-10-10): spacing, sizes,
+  column widths, line breaks, wording, small TikZ nudges. Edit the section file, build with
+  `preview.tex`, render and look at just the changed page. A subagent polish round cost
+  90–175k tokens for a few lines of change, so it is not worth delegating.
+- Never have Opus and a subagent edit the same file at the same time.
 - The subagent compiles, renders the changed frame(s) to PNG, checks them, and reports.
   Opus then looks only at the final rendered frame(s), not at intermediate output.
 - Give the subagent the exact section file to edit and the agreed spec; it should not read
   the whole deck or the papers.
-- In our chats the subagent does all builds. `build.sh` is only for when the user works alone.
+- In our chats Claude (subagent or Opus) does all builds, with latexmk. `build.sh` is only for
+  when the user works alone; Claude never runs it (it opens a window).
 
 ## Work loop for each slide
 1. Discuss with the user.
@@ -63,8 +74,26 @@ Subagent build: `cd talk && latexmk -pdf -interaction=nonstopmode nm4qm_talk.tex
 
 ## Slides
 - Professional. "Goldilocks" text: only as much as needed to communicate, no more, not too little.
-- Figures carry the slide: assertion-style title (the claim, not the topic), one dominant
-  figure, at most 3 short bullets or one key equation, optional one-line take-away.
+- Figures carry the slide: one dominant figure, at most 3 short bullets or one key equation,
+  optional one-line take-away.
+- Titles are SHORT (user, 2026-10-10: "the titles in general are too verbose"). Aim for one
+  phrase of about 4 to 7 words, e.g. "van Hove singularities in the flat band",
+  "Kondo revival at the magic angle". Not a full sentence with a colon and two clauses.
+  The same goes for the grey take-away line: short, and a question is fine.
+- Text colours must not clash with the curve colours of the figure they annotate; do not draw
+  label arrows across data. Prefer a caption beside or under the figure.
+- Cite the source of every borrowed figure under it.
+- Highlights: the user's inline colour blocks, as in `sample_talk/talk_NQS_basis_dependence.tex`:
+  `\colorbox{tomato!30}{\mystrut key phrase}` then normal text. Colours tomato, spinach, pumpkin,
+  orchid, citron (all in `preamble.tex`, with `\mystrut`), tint `!30` to `!60`. Use them for a
+  short label or key phrase, a few per slide at most, not for whole paragraphs.
+  Caution (Claude's note): spinach is the same RGB as the AFM regime green and pumpkin is close
+  to the FM orange, so on slides that show those regimes pick a different highlight colour.
+- A dense slide is fine if every ingredient on it is simple and is explained clearly
+  (conference talks move fast). Use beamer overlays (`\only`, `\onslide`) to bring a dense
+  slide in step by step; keep the layout from jumping between steps.
+- References: small grey full reference directly under the figure or claim it belongs to,
+  typed as plain text. Use them throughout, but sparingly: at most two or three per slide.
 - Regime colours are fixed across the deck (see `macros.tex`): free moment red, Kondo blue,
   AFM singlet green, FM two-stage orange.
 - Keep the .tex hand-editable: the user edits offline too. Plain beamer, one section per file,
@@ -74,4 +103,5 @@ Subagent build: `cd talk && latexmk -pdf -interaction=nonstopmode nm4qm_talk.tex
 ## Figures
 The deck compiles from the repo alone; no .tex file references the paper PDFs. Keep it that way.
 A new figure from the draft: ask the user for the original PDF. From the published TBG paper:
-400-dpi PNG crop into `talk/figures/tbg_*.png`.
+400-dpi PNG crop into `talk/figures/tbg_*.png`. From the user's old talk
+(`assets/prev_tbg_talk.pdf`): 400-dpi PNG crop into `talk/figures/prev_*.png`.

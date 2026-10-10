@@ -15,6 +15,30 @@ Compact reference so a new session does not need to re-read the PDFs. Claude kee
 - Recurring visual: BLG "site map", sites coloured by regime, filled in as results land.
 - 2026-10-10: the user does not like the first deck much and wants to rework it section by
   section. What exactly they dislike is not recorded yet: ask.
+- 2026-10-10, TBG section rework: 6 slides, about 5 min (the NRG slide moves here from the BLG
+  part), in `talk/sections/01_tbg.tex`: (1) hook, Kondo in a metal, T_K formula with ρ0
+  highlighted; (2) graphene at neutrality, no Kondo; (3) TBG: cone + vHs, saddle animation to the
+  HO-vHs; (4) vHs boosts T_K, Table I, "which one wins?"; (5) NRG + how to read S_imp;
+  (6) Kondo revived exactly at the magic angle. 18–19 slides in total is acceptable: some slides
+  are light and take about 20 s. If it runs long, fold (4) into the last step of (3).
+- 2026-10-10 later: a 7th slide added after (2): "Model: Anderson impurity on TBG" (BM host on
+  top, Anderson impurity below; makes ln 4 = four orbital states clear). User verdict on build 2:
+  slides (1) and (5) approved as they are. The impurity-on-moiré sketch from the old talk is
+  disliked ("ugly"); the Pixley PRL must never be cited alone under the model, always together
+  with the user's PRB.
+- More refs now in the deck: Castro Neto, Guinea, Peres, Novoselov, Geim, Rev. Mod. Phys. 81,
+  109 (2009) (source of the graphene dispersion-with-cone figure; the user remembered it as a
+  2006 review); Jiang, Lo, May, Li, Guo, Anders, Taniguchi, Watanabe, Mao, Andrei, "Inducing
+  Kondo screening of vacancy magnetic moments in graphene with gating and local curvature",
+  Nat. Commun. 9, 2349 (2018) (Andrei group experiment, vacancies in graphene).
+- The hook must be strong: the user opens with "magnetic impurities on stacked graphene" and
+  wants the audience interested from slide 1.
+- Bernal section must OPEN with: you never have just one impurity; Kondo is the dilute limit;
+  two impurities close by give RKKY, which competes with Kondo. TBG slide 6 ends on that question.
+- Teach entropy as "a plateau at ln N means N states available to the impurity". Use N, not S,
+  for the count. Covers ln 4 in TBG (Anderson, free orbital) and ln 4 in BLG (two free spins).
+- Realisations of the moment, cited as a pair: hydrogen adatoms (González-Herrero 2016) and
+  vacancies (Chang … Pixley 2024). The Pixley PRL is cited again next to the PRB on the result slide.
 
 ## New paper: `rkky_kondo.pdf` (unpublished draft, never commit)
 "Interplay between RKKY and Kondo physics in Bernal bilayer graphene",
@@ -73,6 +97,20 @@ Figure index: Fig 1 schematic + DoS vs angle + E_v p2 · Fig 2 saddle-point cont
 Table I p7 · Fig 3 RG flow per DoS p8 · Fig 4 entropy and spectral function vs angle p9 ·
 Fig 5 compound RG flow cartoon p9 · Fig 6 magic-angle entropy, T_K vs J p10.
 
+Must cite alongside it (Pixley will be in the audience): Y. Chang, J. Yi, A.-K. Wu, F. B. Kugler,
+E. Y. Andrei, D. Vanderbilt, G. Kotliar, J. H. Pixley, "Vacancy-induced tunable Kondo effect in
+twisted bilayer graphene", PRL 133, 126503 (2024), arXiv:2312.09286. Vacancy states in TBG act as
+a spin-1/2 impurity; tunable probe of the critical destruction of Kondo in pseudogap hosts.
+
+Old talk `assets/prev_tbg_talk.pdf` (35 pages, user finds it amateurish: borrow figures, not style).
+Useful pages: p18 BM band structure · p19 saddle contours + log-vHs formula · p22 higher-order
+saddle, ρ ~ |E|^(-1/4) · p23 DoS vs θ and E_v(θ) · p30 Table I · p31 impurity-on-moiré sketch ·
+p33 entropy vs angle + RG cartoon, "Revival of the Kondo effect at the magic angle".
+Citation style there: small full reference directly under the figure it belongs to.
+Other refs used there: Bistritzer & MacDonald, PNAS 108, 12233 (2011); Yuan, Isobe, Fu,
+Nat. Commun. 10, 5769 (2019); Classen et al., PRB 102, 125141 (2020); Mitchell, Vojta, Bulla,
+Fritz, PRB 88, 195119 (2013); González-Herrero et al., Science 352, 437 (2016).
+
 ## Q&A prep (graded 2026-10-09)
 1. What sets E_F; displacement field? McCann–Koshino fitted parameters; small asymmetry terms put
    the system slightly off neutrality. Zero field. A gap at E_F would quench Kondo on every site
@@ -98,7 +136,18 @@ Fig 11 fig2_blg_ldos_comparison.pdf · Fig 12 site2SvsT.pdf · Fig 13 cosmodel_j
 TBG paper (400-dpi PNG crops): Table I tbg_table1.png · Fig 1(b,c) tbg_fig1bc.png ·
 Fig 4(a) tbg_fig4a.png · Fig 5 tbg_fig5.png.
 
+Split panels of TBG Fig 1: tbg_fig1b.png (DoS vs angle) · tbg_fig1c.png (E_v and det D vs angle).
+Old-talk crops (400 dpi): prev_graphene_cone.png (p3, from Castro Neto RMP 2009) ·
+prev_bm_bands.png (p18, from Bistritzer–MacDonald PNAS 2011) · prev_contours_tbg.png (p19) ·
+prev_saddle_log.png (p19) · prev_saddle_higher.png (p22) · prev_impurity_sketch.png (p31, not
+used: replaced by a TikZ moiré on the model slide; kept as fallback).
+Not used any more but still in the repo: tbg_table1.png (table retyped in LaTeX), tbg_fig1bc.png.
+
 ## Open items
+- TBG section (7 slides, PDF pages 2–18) committed 2026-10-10 after three build rounds; the
+  user had approved slides 1 and 6 (hook, NRG) and had not yet seen the final state of the others.
+- Bernal section now has no NRG slide and still opens on the lattice/LDoS slide: rework next,
+  opening on "one impurity is the dilute limit; two close by: RKKY vs Kondo".
 - VERIFY units of J and T_K in the plots (eV, kelvin, or bandwidth units?). The user thinks
   T_K is in kelvin; with LDoS in eV⁻¹ it would be eV. Unresolved.
 - Backup "two-spin entropy" frame still has a placeholder; exact forms are above.

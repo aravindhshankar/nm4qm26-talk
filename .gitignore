@@ -17,3 +17,4 @@ sample_talk/
 *.synctex.gz
 *.vrb
 .DS_Store
+talk/preview.pdf
