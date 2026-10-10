@@ -19,13 +19,6 @@
 \newcommand{\tk}[1]{\par\vfill\noindent\colorbox{LightGray}{\parbox{\dimexpr\linewidth-2\fboxsep}{\centering\small #1}}\vspace*{-0.2cm}}
 \newcommand{\lnn}[1]{\ln #1}
 
-% cropped figure: \cfig{file}{pagewidth pt}{page}{x0}{y0}{x1}{y1}{opts}; box in px of a 70-dpi render
-\newcommand{\cfig}[8]{%
- \pgfmathsetmacro{\tl}{#4}\pgfmathsetmacro{\tt}{#5}%
- \pgfmathsetmacro{\tr}{#2-#6}\pgfmathsetmacro{\tb}{792-#7}%
- \includegraphics[page=#3,trim=\tl bp \tb bp \tr bp \tt bp,clip,#8]{#1}}
-\newcommand{\nf}[6]{\cfig{../rkky_kondo.pdf}{612}{#1}{#2}{#3}{#4}{#5}{#6}}
-\newcommand{\of}[6]{\cfig{../KondoTBG.pdf}{589.5}{#1}{#2}{#3}{#4}{#5}{#6}}
 
 % BLG site map. Projected lattice: A1 (honeycomb A), B1=A2 stacked (honeycomb B), B2 at hexagon centres.
 % stage 0 empty; 1 single-impurity regimes; 2 + A1-B2 AFM singlet; 3 + B2-B2 FM two-stage

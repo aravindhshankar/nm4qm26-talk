@@ -90,10 +90,16 @@ Fig 5 compound RG flow cartoon p9 · Fig 6 magic-angle entropy, T_K vs J p10.
 "Why NRG if poor man's scaling gets T_K?" For one impurity it confirms the picture, but that
 was not knowable a priori; it is needed for S(T→0) on A2/B1 and for all two-impurity results.
 
+## Figure files in `talk/figures/` (swapped in 2026-10-10)
+Draft: Fig 1 BLG_regv3.pdf · Fig 2 ldos.pdf · Fig 3 CombFigDyn.pdf · Fig 4 TkvsJINSETS.pdf ·
+Fig 5 split_CombFigr_0site2r0_grid.pdf · Fig 6 AFM_scalingwithJ0v4.pdf · Fig 7 JvsrSiteAFM.pdf ·
+Fig 8 jvsJsiteFM.pdf · Fig 9 jvsrsiteFM.pdf · Fig 10 BLG_regv2.pdf ·
+Fig 11 fig2_blg_ldos_comparison.pdf · Fig 12 site2SvsT.pdf · Fig 13 cosmodel_jrkky.pdf.
+TBG paper (400-dpi PNG crops): Table I tbg_table1.png · Fig 1(b,c) tbg_fig1bc.png ·
+Fig 4(a) tbg_fig4a.png · Fig 5 tbg_fig5.png.
+
 ## Open items
 - VERIFY units of J and T_K in the plots (eV, kelvin, or bandwidth units?). The user thinks
   T_K is in kelvin; with LDoS in eV⁻¹ it would be eV. Unresolved.
 - Backup "two-spin entropy" frame still has a placeholder; exact forms are above.
 - No slide shows the host Hamiltonian/parameters; a backup model slide was suggested for Q1.
-- Figures: the user will drop original figure PDFs into `talk/figures/`; swap them in for the
-  `\nf`/`\of` page-trim includes.

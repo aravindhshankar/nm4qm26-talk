@@ -21,9 +21,11 @@ notes/paper_notes.md
 talk/nm4qm_talk.tex     main file: only \input lines
 talk/preamble.tex       theme, packages, colours, footline
 talk/macros.tex         title/author, \ft (frame title), \tk (take-away box), regime colours,
-                        \sitemap, \legend, \nf/\of (page-trim figure includes, being phased out)
+                        \sitemap, \legend
 talk/sections/NN_*.tex  one file per section, a few frames each
-talk/figures/           the user's original figure PDFs
+talk/figures/           all figures, included with plain \includegraphics{figures/...}:
+                        the user's original draft-figure PDFs (do not rename or edit) and
+                        tbg_*.png crops from the published TBG paper. Map: notes/paper_notes.md
 talk/nm4qm_talk.pdf     tracked: a working presentation is always in the repo
 talk/build.sh           the USER's build script: builds and opens the PDF (-w = live preview)
 ```
@@ -69,6 +71,7 @@ Subagent build: `cd talk && latexmk -pdf -interaction=nonstopmode nm4qm_talk.tex
   no generated code, no clever macros. Prefer editing one section file per change.
 - Speaker notes are `% Notes:` comments under each frame.
 
-## Known limitation
-Until every `\nf`/`\of` include is replaced by a file in `talk/figures/`, a fresh clone needs the
-two paper PDFs in the repo root to compile. The tracked `talk/nm4qm_talk.pdf` is always usable.
+## Figures
+The deck compiles from the repo alone; no .tex file references the paper PDFs. Keep it that way.
+A new figure from the draft: ask the user for the original PDF. From the published TBG paper:
+400-dpi PNG crop into `talk/figures/tbg_*.png`.
