@@ -1,0 +1,142 @@
+% Removed \pdfoutput=1 as it is unnecessary
+\RequirePackage{silence}
+\WarningFilter{remreset}{The remreset package}
+\documentclass[10pt,xcolor={table}]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\usefonttheme{structurebold}
+\definecolor{LightGray}{RGB}{241,241,241}
+\setbeamercolor*{block body}{bg=LightGray,fg=black}
+\setbeamertemplate{navigation symbols}{}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{mathtools}
+\mathtoolsset{mathic}
+\usepackage[final]{microtype}
+\usepackage{multicol}
+\usepackage{latexsym,exscale,amsfonts,amssymb}
+\usepackage{enumitem}
+\setlist[enumerate]{itemsep=0.2cm,label=$\blacktriangleright$}
+\usepackage{amsthm,amsfonts,amssymb,amscd,textcomp,bbm,dsfont}
+\usepackage{physics}
+\usepackage{bm}
+
+\vbadness=100001
+\hbadness=100001
+
+% colors
+\definecolor{mygray}{gray}{0.6}
+\definecolor{mygraydark}{gray}{0.4}
+\definecolor{mygraylight}{gray}{0.85}
+\definecolor{spinach}{RGB}{46,139,87}
+\definecolor{tomato}{RGB}{255,99,71}
+\definecolor{orchid}{RGB}{143,40,194}
+\definecolor{neon}{RGB}{77,77,255}
+\definecolor{pumpkin}{RGB}{224,180,80}
+\definecolor{citron}{RGB}{190,180,90}
+\definecolor{lava}{RGB}{207,16,32}
+\definecolor{cream}{RGB}{255,253,208}
+\definecolor{verdigris}{RGB}{67,179,174}
+\definecolor{Black}{RGB}{0,0,0}
+\definecolor{mydarkblue}{RGB}{10,10,170}
+\definecolor{darkspinach}{RGB}{20,70,20}
+\definecolor{darktomato}{RGB}{155,40,30}
+\definecolor{darkorchid}{RGB}{50,10,100}
+\definecolor{darklava}{RGB}{150,8,16}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes,positioning,calc}
+\usetikzlibrary{cd}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows.meta,shapes,positioning,matrix,calc}
+\usetikzlibrary{shapes.callouts}
+\usetikzlibrary{patterns}
+\tikzset{anchorbase/.style={baseline={([yshift=-0.5ex]current bounding box.center)}},tinynodes/.style={font=\tiny,text height=0.75ex,text depth=0.15ex},
+smallnodes/.style={font=\scriptsize,text height=0.75ex,text depth=0.15ex},
+usual/.style={line width=2.3,color=black},
+dusual/.style={line width=0.5,color=black,double},
+crossline/.style={preaction={draw=white,line width=4.0pt,-},preaction={draw=black,line width=1.0pt,-}},
+redstring/.style = {draw=red!50,fill=none,line width=0.35mm,preaction={draw=red,line width=2.5pt,-},nodes={color=red}},
+dot colour/.initial=black,
+dot colour/.default=black,
+solid/.style = {draw=blue,fill=none,dot colour=blue,line width=0.4mm,nodes={color=blue}},
+ghost/.style = {draw=darkgray,fill=none,dot colour=darkgray,
+densely dashed,line width=0.4mm,nodes={color=darkgray}},
+dghost/.style = {draw=darkgray,double,fill=none,dot colour=darkgray,
+densely dashed,line width=0.4mm,nodes={color=darkgray}},
+dot/.style = {
+decoration={markings,
+post length=0.25mm,
+pre length=0.25mm,
+mark=at position #1 with {\node[circle,radius=0.3cm,inner sep=-2.0pt,color=\pgfkeysvalueof{/tikz/dot colour},fill=\pgfkeysvalueof{/tikz/dot colour}]{};}
+},
+postaction={decorate}
+},
+dot/.default=0.5,
+}
+%%multiple arrow options
+\tikzstyle directed=[postaction={decorate,decoration={markings,
+mark=at position #1 with {\arrow[draw=black, line width=0.4mm]{>}}}}]
+\tikzstyle marked=[postaction={decorate,decoration={markings,
+mark=at position #1 with {\draw[ultra thin,black,fill=black] (0,0) circle (.08cm);}}}]
+\tikzstyle{snakeline} = [decorate, decoration={pre length=0.2cm,
+post length=0.2cm, snake, amplitude=.4mm,
+segment length=2mm},thin,->]
+\tikzstyle{block} = [rectangle, draw, fill=spinach!30,
+text width=4.7em, text centered, rounded corners, minimum height=2.1em, font=\scriptsize]
+\tikzstyle{blockb} = [rectangle, draw, fill=tomato!40,
+text width=4.7em, text centered, rounded corners, minimum height=2.1em, font=\scriptsize]
+\tikzstyle{blockc} = [rectangle, draw, fill=orchid!40,
+text width=4.7em, text centered, rounded corners, minimum height=2.1em, font=\scriptsize]
+\tikzstyle{blockd} = [rectangle, draw, fill=lava!10,
+text width=4.7em, text centered, rounded corners, minimum height=2.1em, font=\scriptsize]
+\tikzstyle{linea} = [very thick, color=tomato,->]
+\tikzstyle{lineb} = [very thick, color=spinach,<->]
+\tikzstyle{linebb} = [very thick, color=spinach, densely dashed, ->]
+\tikzstyle{linec} = [very thick, color=orchid, densely dotted, ->]
+
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!20]
+\tikzstyle{process} = [rectangle, minimum width=4cm, minimum height=1cm, text centered, text width=4.5cm, draw=black, fill=blue!20, aspect=2]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=green!20, aspect=2]
+
+% Replace the decision2 style to use a pentagon shape
+\tikzstyle{decision2} = [regular polygon, regular polygon sides=5, minimum width=2cm, minimum height=1cm, text centered, text width=2cm, draw=black, fill=green!20]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+% general stuff -------------------------------------------------------
+
+
+\allowdisplaybreaks
+\newcommand{\undersetcustom}[2]{\raisebox{.075cm}{$\underset{#1}{#2}$}}
+\DeclareRobustCommand{\longtwoheadrightarrow}{\relbar\joinrel\twoheadrightarrow}
+\DeclareRobustCommand{\doubleheadrightarrow}{\rightarrow\mathrel{\mspace{-15mu}}\rightarrow}
+\newcommand{\mystrut}{\rule[-0.2\baselineskip]{0pt}{0.9\baselineskip}}
+\newcommand{\Ntrunc}{\ensuremath{\mathrm{N}_\mathrm{trunc}}}
+\newcommand{\imag}{\ensuremath{\mathrm{i}}}
+\newcommand{\otheta}{{\color{orchid}{\theta}}}
+\newcommand{\ex}[1]{\\\color{red} \textbf{Ex:}~#1}
+
+\makeatletter
+\setbeamertemplate{footline}{
+\leavevmode%
+\hbox{%
+\begin{beamercolorbox}[wd=0.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+\usebeamerfont{author in head/foot}\insertshortauthor
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=0.3\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+\usebeamerfont{title in head/foot}\insertshorttitle
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=0.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+\end{beamercolorbox}}%
+\vskip0pt%
+}
+\makeatother
+

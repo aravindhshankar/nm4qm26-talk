@@ -1,0 +1,54 @@
+% ============================================================
+% 7  Single impurity
+% ============================================================
+\begin{frame}
+\ft{Stacked sites never screen; unstacked sites do}
+\begin{columns}[T]
+\begin{column}{0.3\textwidth}
+\centering{\footnotesize\textcolor{cLM}{\textbf{A2/B1}}}\\
+\nf{12}{45}{45}{300}{233}{width=\linewidth}
+\end{column}
+\begin{column}{0.37\textwidth}
+\centering{\footnotesize\textcolor{cKondo}{\textbf{A1/B2}}}\\
+\nf{4}{315}{48}{565}{374}{width=\linewidth}
+\end{column}
+\begin{column}{0.3\textwidth}
+\centering\sitemap[0.7]{1}\\[2pt]
+\legend{1}
+\begin{itemize}\footnotesize
+ \item A2/B1: $S\to\ln 2$
+ \item A1/B2: $S\to0$ at large $J$
+\end{itemize}
+\end{column}
+\end{columns}
+\tk{Free moment vs Kondo singlet is set by the impurity position alone}
+\end{frame}
+% Notes: - Stacked sites: DoS suppressed => T_K ~ exp(-1/rho J) astronomically small; entropy stays ln2 down to T=0. Free moment.
+% - Unstacked: enhanced DoS and vHs => entropy quenched ln2 -> 0 for large enough J; -Im chi has a peak at T_K.
+% - Site map gets its first colours: red = free moment, blue = Kondo.
+
+% ============================================================
+% 8  T_K vs 1/J
+% ============================================================
+\begin{frame}
+\ft{$T_K$ crosses between two DoS plateaus as the coupling grows}
+\begin{columns}[T]
+\begin{column}{0.6\textwidth}
+\centering\nf{5}{50}{42}{300}{223}{width=\linewidth}
+\end{column}
+\begin{column}{0.38\textwidth}
+\begin{itemize}
+ \item Weak $J$: low-energy DoS plateau
+ \item Strong $J$: flow reaches the high-energy plateau
+ \item Smooth crossover, no transition
+\end{itemize}
+\vspace{0.2cm}
+{\small $T_K\sim D\exp\!\big(-1/\rho_{\rm eff}J\big)$}
+\end{column}
+\end{columns}
+\tk{Poor man's scaling captures it qualitatively; NRG confirms it quantitatively}
+\end{frame}
+% Notes: - Two effective DoS plateaus: one below the vHs, one above. T_K vs 1/J has two slopes.
+% - Prepared answer: poor man's already gives this, so why NRG? NRG confirms it, but a priori either vHs could cause strong-coupling effects;
+%   NRG is also needed for S(T->0) on A2/B1 and for all two-impurity results.
+

@@ -1,0 +1,19 @@
+# unpublished / source papers: never commit
+rkky_kondo.pdf
+KondoTBG.pdf
+# templates and unrelated material
+*.key
+*.pptx
+sample_talk/
+# LaTeX build files
+*.aux
+*.log
+*.nav
+*.snm
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.vrb
+.DS_Store

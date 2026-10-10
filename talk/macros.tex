@@ -1,0 +1,71 @@
+% ============================================================
+% Talk-specific macros
+% ============================================================
+\title[Kondo \& RKKY in bilayer graphene]{Kondo and RKKY interactions\\in bilayer graphene}
+\author[A. S. Shankar]{Aravindh Swaminathan Shankar \\[2pt] {\footnotesize ashankar@ictp.it}\\[4pt]
+{\scriptsize with D.~O.~Oriekhov, L.~Fritz, A.~K.~Mitchell}}
+\institute[ICTP]{Abdus Salam ICTP, Trieste, Italy}
+\date[NM4QM 2026]{NM4QM 2026}
+
+% regime colours (one per regime, used everywhere)
+\definecolor{cLM}{RGB}{207,16,32}      % free local moment
+\definecolor{cKondo}{RGB}{40,80,230}   % Kondo screened
+\definecolor{cAFM}{RGB}{46,139,87}     % AFM singlet
+\definecolor{cFM}{RGB}{224,150,20}     % FM two-stage
+\definecolor{cOff}{gray}{0.75}
+
+% frame title + takeaway
+\newcommand{\ft}[1]{\vspace*{0.25cm}\textbf{#1}\smallskip\par\noindent{\color{mygray}\rule[1.0ex]{\linewidth}{0.5pt}}\vspace*{-0.35cm}}
+\newcommand{\tk}[1]{\par\vfill\noindent\colorbox{LightGray}{\parbox{\dimexpr\linewidth-2\fboxsep}{\centering\small #1}}\vspace*{-0.2cm}}
+\newcommand{\lnn}[1]{\ln #1}
+
+% cropped figure: \cfig{file}{pagewidth pt}{page}{x0}{y0}{x1}{y1}{opts}; box in px of a 70-dpi render
+\newcommand{\cfig}[8]{%
+ \pgfmathsetmacro{\tl}{#4}\pgfmathsetmacro{\tt}{#5}%
+ \pgfmathsetmacro{\tr}{#2-#6}\pgfmathsetmacro{\tb}{792-#7}%
+ \includegraphics[page=#3,trim=\tl bp \tb bp \tr bp \tt bp,clip,#8]{#1}}
+\newcommand{\nf}[6]{\cfig{../rkky_kondo.pdf}{612}{#1}{#2}{#3}{#4}{#5}{#6}}
+\newcommand{\of}[6]{\cfig{../KondoTBG.pdf}{589.5}{#1}{#2}{#3}{#4}{#5}{#6}}
+
+% BLG site map. Projected lattice: A1 (honeycomb A), B1=A2 stacked (honeycomb B), B2 at hexagon centres.
+% stage 0 empty; 1 single-impurity regimes; 2 + A1-B2 AFM singlet; 3 + B2-B2 FM two-stage
+\newcommand{\sitemap}[2][1.0]{%
+\begin{tikzpicture}[scale=#1,x=0.42cm,y=0.42cm]
+ \def\cA{cOff}\def\cB{cOff}\def\cC{cOff}
+ \ifnum#2>0 \def\cA{cKondo}\def\cB{cLM}\def\cC{cKondo}\fi
+ \begin{scope}
+ \clip (-0.3,-0.6) rectangle (6.4,4.6);
+ \foreach \i in {-2,...,4}{\foreach \j in {-2,...,3}{
+   \pgfmathsetmacro{\cx}{1.7321*\i+0.8660*\j}\pgfmathsetmacro{\cy}{1.5*\j}
+   \draw[mygray,line width=0.4pt] (\cx,\cy+1)--(\cx+0.866,\cy+0.5) (\cx,\cy+1)--(\cx-0.866,\cy+0.5) (\cx,\cy+1)--(\cx,\cy+2);
+ }}
+ \foreach \i in {-2,...,4}{\foreach \j in {-2,...,3}{
+   \pgfmathsetmacro{\cx}{1.7321*\i+0.8660*\j}\pgfmathsetmacro{\cy}{1.5*\j}
+   \fill[\cA] (\cx,\cy+1) circle (0.2);
+   \fill[\cB] (\cx,\cy-1) circle (0.2); \draw[\cB!60!black,line width=0.8pt] (\cx,\cy-1) circle (0.32);
+   \fill[\cC] (\cx,\cy) circle (0.2);
+ }}
+ \ifnum#2>1  % A1-B2 AFM singlet
+   \draw[cAFM,line width=2.2pt,<->,>=stealth] (5.196,4)--(5.196,3.0);
+   \draw[cAFM,line width=2.2pt,<->,>=stealth] (0.0,1)--(0.0,0.0);
+ \fi
+ \ifnum#2>2 % B2-B2 FM two-stage
+   \draw[cFM,line width=2.2pt,<->,>=stealth] (1.73,3.0)--(3.46,3.0);
+   \draw[cFM,line width=2.2pt,<->,>=stealth] (3.46,0)--(5.19,0);
+ \fi
+ \end{scope}
+\end{tikzpicture}}
+\newcommand{\legend}[1]{%
+ \begin{tikzpicture}[font=\scriptsize,x=1cm,y=0.42cm]
+  \ifnum#1=0
+  \fill[mygraydark] (0,0) circle (0.08); \node[anchor=west,mygraydark] at (0.15,0) {unstacked: A1, B2};
+  \draw[mygraydark,line width=0.8pt] (0,-1) circle (0.12); \node[anchor=west,mygraydark] at (0.15,-1) {stacked: A2/B1};
+  \fi
+  \ifnum#1>0
+  \fill[cLM] (0,0) circle (0.08); \node[anchor=west] at (0.15,0) {free moment (A2/B1)};
+  \fill[cKondo] (0,-1) circle (0.08); \node[anchor=west] at (0.15,-1) {Kondo (A1/B2)};
+  \fi
+  \ifnum#1>1 \draw[cAFM,line width=2pt] (-0.1,-2)--(0.1,-2); \node[anchor=west] at (0.15,-2) {AFM singlet (A1--B2)};\fi
+  \ifnum#1>2 \draw[cFM,line width=2pt] (-0.1,-3)--(0.1,-3); \node[anchor=west] at (0.15,-3) {FM two-stage (B2--B2)};\fi
+ \end{tikzpicture}}
+

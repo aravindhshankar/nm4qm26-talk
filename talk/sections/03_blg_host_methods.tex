@@ -1,0 +1,92 @@
+% ============================================================
+% 4  BLG sites
+% ============================================================
+\begin{frame}
+\ft{Bernal bilayer: stacked and unstacked sites see very different DoS}
+\begin{columns}[T]
+\begin{column}{0.36\textwidth}
+\centering\nf{2}{50}{150}{302}{349}{width=\linewidth}
+\vspace{0.1cm}\par
+\sitemap[0.85]{0}\\[2pt]\legend{0}
+\end{column}
+\begin{column}{0.62\textwidth}
+\centering\nf{2}{312}{462}{565}{617}{width=0.92\linewidth}
+\begin{itemize}\small
+ \item A1/B2 (unstacked): large LDoS, trigonal-warping vHs at $\sim$1.6 meV
+ \item A2/B1 (stacked): suppressed LDoS at low energy
+\end{itemize}
+\end{column}
+\end{columns}
+\tk{Same lattice, two kinds of site: what does an impurity feel?}
+\end{frame}
+% Notes: - Bernal BLG: B1 sits on A2 (stacked, dimer), A1 and B2 have no site above/below (unstacked).
+% - LDoS: A1/B2 enhanced with a vHs at ~1.6 meV from trigonal warping; A2/B1 strongly suppressed at low energy.
+% - Site map (bottom left) is empty now: we will colour it by physics as results arrive.
+
+% ============================================================
+% 5  RGF
+% ============================================================
+\begin{frame}
+\ft{RGF resolves the 1.6 meV vHs that 2D integration misses}
+\begin{columns}[T]
+\begin{column}{0.46\textwidth}
+\centering\nf{11}{45}{45}{300}{215}{width=\linewidth}
+\end{column}
+\begin{column}{0.5\textwidth}
+\centering\nf{9}{312}{45}{565}{248}{width=\linewidth}
+\end{column}
+\end{columns}
+\begin{itemize}\small
+ \item vHs lives within $10^{-4}$ of the BZ scale: 2D integration needs a huge grid
+ \item Fold into a square supercell, Fourier transform along one axis, recurse
+\end{itemize}
+\tk{RGF gives the full energy-resolved local and non-local DoS cheaply}
+\end{frame}
+% Notes: - Why: the low-energy vHs sits at ~1e-4 of the BZ linear size, so a k-grid broadens or misses it.
+% - How: redraw BLG on a square Bravais lattice (Fig right), transform along one direction, recursion in the other.
+% - Left: RGF vs 2D integration with two broadenings: RGF resolves the vHs with a better quality than brute force.
+
+% ============================================================
+% 6  NRG
+% ============================================================
+\begin{frame}
+\ft{NRG turns the DoS into entropy plateaus, each one a fixed point}
+\centering
+\begin{tikzpicture}[font=\scriptsize,x=1cm,y=1cm]
+ % DoS
+ \begin{scope}
+  \draw[->] (0,0)--(2.6,0) node[right]{$\omega$}; \draw[->] (1.3,0)--(1.3,1.8) node[above]{$\rho(\omega)$};
+  \draw[very thick,spinach] plot[domain=-1.2:1.2,samples=40] ({1.3+\x},{0.15+0.35*abs(\x)+0.45/(1+30*\x*\x)});
+  \node at (1.3,-0.5) {\textbf{1.} bath DoS (RGF)};
+ \end{scope}
+ \draw[-{Stealth},thick] (3.0,0.7)--(3.6,0.7);
+ % Wilson chain
+ \begin{scope}[xshift=3.9cm]
+  \node[circle,draw=cLM,fill=cLM!25,inner sep=2pt] (imp) at (0,0.7) {$S$};
+  \foreach \k/\r in {1/0.17,2/0.15,3/0.12,4/0.09,5/0.07}{
+    \node[circle,draw=cKondo,fill=cKondo!25,inner sep=0pt,minimum size={2*\r cm}] (c\k) at ({0.45+0.4*\k},0.7) {};}
+  \draw (imp)--(c1)--(c2)--(c3)--(c4)--(c5);
+  \node at (1.5,0.2) {$t_n\sim\Lambda^{-n/2}$};
+  \node at (1.2,-0.5) {\textbf{2.} Wilson chain, $S\!\cdot\!\sigma$ at the end};
+ \end{scope}
+ \draw[-{Stealth},thick] (7.4,0.7)--(8.0,0.7);
+ % S(T)
+ \begin{scope}[xshift=8.4cm]
+  \draw[->] (0,0)--(2.9,0) node[right]{$\ln T$}; \draw[->] (0,0)--(0,1.7) node[above]{$S_{\rm imp}$};
+  \draw[thick,dashed,mygray] (0,1.38)--(2.7,1.38) (0,0.69)--(2.7,0.69);
+  \node[left] at (0,1.38) {$\ln4$}; \node[left] at (0,0.69) {$\ln2$}; \node[left] at (0,0) {$0$};
+  \draw[very thick,cKondo] (2.7,0.69)--(1.8,0.69) .. controls (1.4,0.69) and (1.5,0.0) .. (0.9,0.0)--(0.1,0);
+  \node[font=\tiny,cLM] at (2.2,0.95) {free};  \node[font=\tiny,cKondo] at (0.55,0.2) {screened};
+  \node at (1.45,-0.5) {\textbf{3.} $S(T)$, $\chi(\omega)$};
+ \end{scope}
+\end{tikzpicture}
+\begin{itemize}\small
+ \item Plateau value identifies the fixed point: free moment ($\ln 2$), singlet ($0$), spin-1 ($\ln 3$)
+ \item Peak of $-\mathrm{Im}\,\chi(\omega)$ marks the screening scale
+\end{itemize}
+\tk{We read the physics off $S_{\rm imp}(T)$, no model-specific fits needed}
+\end{frame}
+% Notes: - Input to NRG is only the hybridisation function Delta(omega), here from RGF.
+% - Log-discretise, map to a Wilson chain with hopping decaying as Lambda^{-n/2}; diagonalise iteratively.
+% - Each entropy plateau is a fixed point; crossovers between plateaus define T_K and the exchange scales.
+
