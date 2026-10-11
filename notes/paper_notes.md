@@ -229,6 +229,18 @@ points at 0.78 meV, |q|a = 0.0166; conduction saddle (vHs) at 1.589 meV, valence
 RKKY-in-BLG refs shown on slide 9: Jiang 2012, Parhizgar–Sherafati–Asgari–Satpathy 2013,
 Klier–Shallcross–Pankratov 2014 (the user's "Sherafati–Satpathy" is taken to be the 2013 PRB).
 
+Single-impurity section reworked 2026-10-11 (`talk/sections/04_single_impurity.tex`, slides
+13–15): (13) "Dilute limit: one impurity, two kinds of site": LDoS + site map; (14) "One
+impurity: Kondo only on unstacked sites": entropy on A2/B1 and A1/B2, site map coloured,
+take-away "Free moment or Kondo singlet: the site alone decides"; (15) "The Kondo scale follows
+two laws": T_K vs 1/J beside the LDoS, ρ_eff = low plateau (weak J, T_K below the van Hove peak)
+or high plateau (strong J), punchline "One site, two Kondo laws: the impurity reads out the van
+Hove singularity" (the user's idea: the impurity picks out the two LDoS plateaus).
+CHECK WITH THE USER: the draft text (Sec. III A) says the two regimes are separated by the "high
+energy van Hove singularity at 3 eV", but its own figures put the two plateaus (red 0.0034, green
+0.010 in Fig. 2) on either side of the LOW-energy peak at 1.6 meV, and the E_vHs line in the
+Fig. 4 inset sits near 1e-3. The slides follow the figures (1.6 meV peak).
+
 ## Open items
 - TBG section (7 slides, PDF pages 2–18) committed 2026-10-10 after three build rounds; the
   user had approved slides 1 and 6 (hook, NRG) and had not yet seen the final state of the others.

@@ -1,54 +1,90 @@
 % ============================================================
-% 7  Single impurity
+% 4a  Dilute limit: one impurity, two kinds of site
 % ============================================================
-\begin{frame}
-\ft{Stacked sites never screen; unstacked sites do}
+\begin{frame}[t]
+\ft{Dilute limit: one impurity, two kinds of site}
 \begin{columns}[T]
-\begin{column}{0.3\textwidth}
-\centering{\footnotesize\textcolor{cLM}{\textbf{A2/B1}}}\\
-\includegraphics[width=\linewidth]{figures/site2SvsT.pdf}
+\begin{column}{0.58\textwidth}
+\vspace{0.6cm}
+\centering\includegraphics[width=\linewidth]{figures/ldos.pdf}
+{\tiny\color{mygray} Local density of states from recursive Green's functions\par}
 \end{column}
-\begin{column}{0.37\textwidth}
-\centering{\footnotesize\textcolor{cKondo}{\textbf{A1/B2}}}\\
-\includegraphics[width=\linewidth]{figures/CombFigDyn.pdf}
-\end{column}
-\begin{column}{0.3\textwidth}
-\centering\sitemap[0.7]{1}\\[2pt]
-\legend{1}
-\begin{itemize}\footnotesize
- \item A2/B1: $S\to\ln 2$
- \item A1/B2: $S\to0$ at large $J$
-\end{itemize}
+\begin{column}{0.40\textwidth}
+\vspace{0.6cm}
+\centering\sitemap[0.8]{0}\\[2pt]\legend{0}\par
+\vspace{0.3cm}
+\raggedright
+\onslide<2->{\colorbox{citron!40}{\mystrut Unstacked A1/B2}\\[2pt]
+van Hove peak at 1.6 meV\\ between two plateaus\par
+\vspace{0.3cm}
+\colorbox{pumpkin!45}{\mystrut Stacked A2/B1}\\[2pt]
+100 times fewer states\par}
 \end{column}
 \end{columns}
-\tk{Free moment vs Kondo singlet is set by the impurity position alone}
 \end{frame}
-% Notes: - Stacked sites: DoS suppressed => T_K ~ exp(-1/rho J) astronomically small; entropy stays ln2 down to T=0. Free moment.
-% - Unstacked: enhanced DoS and vHs => entropy quenched ln2 -> 0 for large enough J; -Im chi has a peak at T_K.
-% - Site map gets its first colours: red = free moment, blue = Kondo.
+% Notes: New section: the dilute limit, one impurity at a time. Where it sits is the only knob.
+% Notes: Bernal BLG: B1 sits on A2 (stacked), A1 and B2 have nothing above or below (unstacked).
+% Notes: Unstacked A1/B2: the trigonal-warping van Hove peak at 1.6 meV separates a low plateau (below it) from a higher plateau (above it): the two dashed lines.
+% Notes: Stacked A2/B1: the low-energy LDoS is about a hundred times smaller.
 
 % ============================================================
-% 8  T_K vs 1/J
+% 4b  Kondo only on unstacked sites
 % ============================================================
-\begin{frame}
-\ft{$T_K$ crosses between two DoS plateaus as the coupling grows}
+\begin{frame}[t]
+\ft{One impurity: Kondo only on unstacked sites}
 \begin{columns}[T]
-\begin{column}{0.6\textwidth}
-\centering\includegraphics[width=\linewidth]{figures/TkvsJINSETS.pdf}
+\begin{column}{0.36\textwidth}
+\vspace{0.2cm}
+\centering{\small\colorbox{cLM!20}{\mystrut Stacked A2/B1}}\\[3pt]
+\includegraphics[width=\linewidth]{figures/site2SvsT.pdf}\\[4pt]
+{\small entropy stays at $\ln 2$:\\ \textcolor{cLM}{free moment}\par}
 \end{column}
 \begin{column}{0.38\textwidth}
-\begin{itemize}
- \item Weak $J$: low-energy DoS plateau
- \item Strong $J$: flow reaches the high-energy plateau
- \item Smooth crossover, no transition
-\end{itemize}
 \vspace{0.2cm}
-{\small $T_K\sim D\exp\!\big(-1/\rho_{\rm eff}J\big)$}
+\onslide<2->{\centering{\small\colorbox{cKondo!20}{\mystrut Unstacked A1/B2}}\\[3pt]
+\includegraphics[height=5.6cm]{figures/CombFigDyn.pdf}\par}
+\end{column}
+\begin{column}{0.24\textwidth}
+\vspace{0.2cm}
+\onslide<2->{{\small entropy $\ln 2\to 0$\\ at strong coupling:\\ \textcolor{cKondo}{Kondo singlet}\par}}
+\vspace{0.4cm}
+\onslide<3->{\centering\sitemap[0.62]{1}\\[2pt]\legend{1}\par}
 \end{column}
 \end{columns}
-\tk{Poor man's scaling captures it qualitatively; NRG confirms it quantitatively}
+\onslide<3->{\tk{Free moment or Kondo singlet: the site alone decides}}
 \end{frame}
-% Notes: - Two effective DoS plateaus: one below the vHs, one above. T_K vs 1/J has two slopes.
-% - Prepared answer: poor man's already gives this, so why NRG? NRG confirms it, but a priori either vHs could cause strong-coupling effects;
-%   NRG is also needed for S(T->0) on A2/B1 and for all two-impurity results.
+% Notes: Still one impurity. Reminder: a plateau at ln 2 means two states available, a free spin-1/2.
+% Notes: Stacked sites: the LDoS is so small that T_K ~ exp(-1/rho J) is astronomically small; the entropy stays at ln 2 at every coupling. Free moment.
+% Notes: Unstacked sites: at strong enough coupling the entropy is quenched from ln 2 to 0; the dynamical susceptibility peaks at T_K. A crossover, not a transition.
+% Notes: The site map gets its first colours: red = free moment, blue = Kondo.
 
+% ============================================================
+% 4c  T_K: two Kondo laws
+% ============================================================
+\begin{frame}[t]
+\ft{The Kondo scale follows two laws}
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\vspace{0.2cm}
+\centering\includegraphics[width=\linewidth]{figures/TkvsJINSETS.pdf}
+{\tiny\color{mygray} Unstacked site A1/B2, NRG\\ Inset: poor man's scaling, Anderson, J. Phys. C 3, 2436 (1970)\par}
+\end{column}
+\begin{column}{0.48\textwidth}
+\vspace{0.2cm}
+\onslide<2->{\centering\includegraphics[width=0.9\linewidth]{figures/ldos.pdf}\par}
+\end{column}
+\end{columns}
+\vspace{0.25cm}
+\centering
+{\large $T_K \sim D\,e^{-1/\rho_{\rm eff}J}$}\qquad
+\onslide<2->{\begin{tabular}{@{}l@{\ \ }l@{}}
+ weak $J$, \ \,$T_K$ below the van Hove peak: & $\rho_{\rm eff}=$ \colorbox{tomato!35}{\mystrut low plateau}\\[3pt]
+ strong $J$, $T_K$ above the van Hove peak: & $\rho_{\rm eff}=$ \colorbox{spinach!30}{\mystrut high plateau}
+\end{tabular}}\par
+\onslide<3->{\tk{One site, two Kondo laws: the impurity reads out the van Hove singularity}}
+\end{frame}
+% Notes: T_K against 1/J on the unstacked site: not one straight line but two, with a smooth crossover.
+% Notes: Each slope is an effective density of states. They are the two plateaus of the LDoS (dashed lines, right), on either side of the 1.6 meV van Hove peak.
+% Notes: Weak coupling: screening sets in below the peak, the impurity only sees the low plateau. Strong coupling: T_K is above the peak and the high plateau sets the scale.
+% Notes: Poor man's scaling (inset) gives the same picture; NRG confirms it and shows the crossover is smooth.
+% Notes: Prepared answer, why NRG if scaling gets T_K: it was not knowable a priori, and NRG is needed for S(T -> 0) on the stacked sites and for everything with two impurities.

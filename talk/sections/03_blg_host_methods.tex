@@ -97,11 +97,11 @@ Affleck, Ludwig, Jones, PRB 52, 9528 (1995)\par}}
 \end{column}
 \begin{column}{0.42\textwidth}
 \vspace{0.6cm}
-NRG: logarithmic energy grid,\\ down to \colorbox{citron!40}{\mystrut far below 1 meV}\par
+\colorbox{pumpkin!45}{\mystrut NRG} logarithmic energy grid,\\[2pt] down to \colorbox{citron!40}{\mystrut far below 1 meV}\par
 \vspace{0.45cm}
 van Hove peak:\\ $\sim 10^{-4}$ of the Brillouin zone\par
 \vspace{0.45cm}
-Recursive Green's functions (RGF):\\ smooth, peak resolved\par
+\colorbox{spinach!30}{\mystrut RGF} recursive Green's functions:\\[2pt] smooth, peak resolved\par
 \end{column}
 \end{columns}
 \onslide<2->{\tk{Direct integration is noisy: unsuitable for the logarithmic grid of NRG}}
@@ -180,28 +180,3 @@ Lewenkopf, Mucciolo, J. Comput. Electron. 12, 203 (2013)\par}
 % Notes: Each step is only 8x8 matrix algebra and doubles the length, so 2^N cells cost N steps.
 % Notes: The remaining k_x integral is done with an adaptive cubature: the Cuhre routine of the Cuba library (Hahn), through Buchner's Python interface.
 % Notes: Output: the local and non-local Green's function at any energy, with broadening as small as needed.
-
-% ============================================================
-% 4  BLG sites
-% ============================================================
-\begin{frame}
-\ft{Bernal bilayer: stacked and unstacked sites see very different DoS}
-\begin{columns}[T]
-\begin{column}{0.36\textwidth}
-\centering\includegraphics[width=\linewidth]{figures/BLG_regv3.pdf}
-\vspace{0.1cm}\par
-\sitemap[0.85]{0}\\[2pt]\legend{0}
-\end{column}
-\begin{column}{0.62\textwidth}
-\centering\includegraphics[width=0.92\linewidth]{figures/ldos.pdf}
-\begin{itemize}\small
- \item A1/B2 (unstacked): large LDoS, trigonal-warping vHs at $\sim$1.6 meV
- \item A2/B1 (stacked): suppressed LDoS at low energy
-\end{itemize}
-\end{column}
-\end{columns}
-\tk{Same lattice, two kinds of site: what does an impurity feel?}
-\end{frame}
-% Notes: - Bernal BLG: B1 sits on A2 (stacked, dimer), A1 and B2 have no site above/below (unstacked).
-% - LDoS: A1/B2 enhanced with a vHs at ~1.6 meV from trigonal warping; A2/B1 strongly suppressed at low energy.
-% - Site map (bottom left) is empty now: we will colour it by physics as results arrive.

@@ -104,6 +104,9 @@ macOS has no `timeout` command. Do not run `build.sh` from a subagent (it opens 
   `\colorbox{tomato!30}{\mystrut key phrase}` then normal text. Colours tomato, spinach, pumpkin,
   orchid, citron (all in `preamble.tex`, with `\mystrut`), tint `!30` to `!60`. Use them for a
   short label or key phrase, a few per slide at most, not for whole paragraphs.
+  Use them a bit more freely (user, 2026-10-11): method names and key terms such as NRG and RGF
+  are good highlights; two or three per slide is the norm, not the exception. A highlight may
+  match the colour of the curve or regime it names (RGF in the green of its curve).
   Caution (Claude's note): spinach is the same RGB as the AFM regime green and pumpkin is close
   to the FM orange, so on slides that show those regimes pick a different highlight colour.
 - A dense slide is fine if every ingredient on it is simple and is explained clearly
