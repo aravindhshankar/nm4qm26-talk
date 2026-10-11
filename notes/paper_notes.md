@@ -195,6 +195,22 @@ Recursive Green's function method (App. A, p9–11; looked up 2026-10-11):
   J. Comput. Electron. 12, 203 (2013); Nguyen, Charlier, J. Comput. Electron. 22, 1215 (2023);
   Settnes et al., PRB 91, 125408 (2015). Cuhre: Hahn, Comput. Phys. Commun. 168, 78 (2005).
 
+- The user's code is built on the López Sancho quick iterative scheme: M. P. López Sancho,
+  J. M. López Sancho, J. Rubio, "Quick iterative scheme for the calculation of transfer matrices:
+  application to Mo(100)", J. Phys. F: Met. Phys. 14, 1205 (1984) (PDF in assets/, not tracked).
+  It must be cited on the recursion slide, with Lewenkopf–Mucciolo.
+
+Methods slides agreed 2026-10-11, in `talk/sections/03_blg_host_methods.tex`, after slide 9:
+(10) "NRG for two impurities: even and odd channels": parity picture + two Wilson chains;
+ρ_{e/o}(ω) = ρ(0,ω) ± ρ(r,ω) (Claude's statement of the Jayaprakash–Krishna-murthy–Wilkins /
+Jones–Varma construction; valid when the two sites have the same local DoS, true for A1–B2 and
+B2–B2); refs JKW 1981, Jones–Varma–Wilkins 1988, Affleck–Ludwig PRL 68, 1046 (1992),
+Affleck–Ludwig–Jones PRB 52, 9528 (1995), cited without discussion; punchline: the low-energy
+local and non-local DoS must be well resolved. (11) "The DoS on every energy scale": Fig. 11
+comparison. (12) "Fast recursive Green's functions": Fig. 10 supercell + doubling drawing.
+The old stacked/unstacked LDoS frame stays after them for now; rework it with the single-impurity
+section. The old RGF frame is deleted.
+
 Computed by Claude (2026-10-11): blg_trigonal_warping.pdf, from make_blg_warping.py (4-band
 McCann–Koshino model, same parameters). Near K: central Dirac point at E = 0, three leg Dirac
 points at 0.78 meV, |q|a = 0.0166; conduction saddle (vHs) at 1.589 meV, valence saddle at
