@@ -7,26 +7,7 @@
 \begin{columns}[c]
 \begin{column}{0.33\textwidth}
 \centering
-% site map as on the single-impurity slides (faded), with one example of each pair on top.
-% dot colour = the site alone (red free moment, blue Kondo); link colour = RKKY sign (orange FM, green AFM)
-\begin{tikzpicture}[x=0.5cm,y=0.5cm]
- \clip (-0.45,-0.28) rectangle (7.4,5.75);
- \foreach \i in {-3,...,5}{\foreach \j in {-2,...,4}{
-   \pgfmathsetmacro{\cx}{1.7321*\i+0.8660*\j}\pgfmathsetmacro{\cy}{1.5*\j}
-   \draw[mygray!70,line width=0.4pt] (\cx,\cy+1)--(\cx+0.866,\cy+0.5) (\cx,\cy+1)--(\cx-0.866,\cy+0.5) (\cx,\cy+1)--(\cx,\cy+2);
- }}
- \foreach \i in {-3,...,5}{\foreach \j in {-2,...,4}{
-   \pgfmathsetmacro{\cx}{1.7321*\i+0.8660*\j}\pgfmathsetmacro{\cy}{1.5*\j}
-   \fill[cKondo!25] (\cx,\cy+1) circle (0.2);
-   \fill[cLM!25] (\cx,\cy-1) circle (0.2); \draw[cLM!25,line width=0.8pt] (\cx,\cy-1) circle (0.32);
-   \fill[cKondo!25] (\cx,\cy) circle (0.2);
- }}
- % from the top: A2-A2, A2-B1, B2-B2, A1-B2
- \foreach \xa/\ya/\xb/\yb/\cs/\cl in {0/5/1.732/5/cLM/cFM, 4.330/3.5/6.062/3.5/cLM/cAFM,
-                                      0.866/1.5/2.598/1.5/cKondo/cFM, 5.196/1/5.196/0/cKondo/cAFM}{
-   \draw[\cl,line width=3pt] (\xa,\ya)--(\xb,\yb);
-   \fill[\cs] (\xa,\ya) circle (0.24); \fill[\cs] (\xb,\yb) circle (0.24);}
-\end{tikzpicture}
+\pairmap[0.5]
 \end{column}
 \begin{column}{0.66\textwidth}
 \centering
@@ -78,10 +59,10 @@
    \draw[->,cLM,>=stealth,line width=1.6pt] (\x,-0.32*\d)--(\x,0.32*\d);}
 \end{tikzpicture}
 \end{minipage}\hfill
-\begin{minipage}[c]{3.6cm}\footnotesize
+\begin{minipage}[c]{3.6cm}\footnotesize\raggedright
 {\small\colorbox{cAFM!25}{\mystrut weak $J$: AFM singlet}}\\[3pt]
 the moments bind each other\\
-$\ln 4\to 0$ in one step\\
+\colorbox{cAFM!25}{\mystrut $\ln 4\to 0$} in one step\\
 sharp peak at $J_{\rm RKKY}$
 \end{minipage}
 
@@ -94,9 +75,9 @@ sharp peak at $J_{\rm RKKY}$
    \draw[->,cLM,>=stealth,line width=1.6pt] (\x,-0.32*\d)--(\x,0.32*\d);}
 \end{tikzpicture}
 \end{minipage}\hfill
-\begin{minipage}[c]{3.6cm}\footnotesize
+\begin{minipage}[c]{3.6cm}\footnotesize\raggedright
 {\small\colorbox{cKondo!20}{\mystrut strong $J$: Kondo}}\\[3pt]
-each moment screened alone\\
+each one \colorbox{cKondo!20}{\mystrut screened alone}\\
 broad crossover to 0\\
 broad Kondo peak
 \end{minipage}}

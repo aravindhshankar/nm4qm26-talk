@@ -2,7 +2,7 @@
 % 1  Hook: the Kondo effect
 % ============================================================
 \begin{frame}[t]
-\ft{A magnetic impurity in a metal is screened away below $T_K$: the Kondo effect}
+\ft{The Kondo effect: a magnetic impurity in a metal}
 \begin{columns}[T]
 \begin{column}{0.45\textwidth}
 \centering
@@ -35,8 +35,8 @@
  \item Impurity spin coupled to the conduction electrons
 \end{itemize}}
 \onslide<2->{\begin{itemize}
- \item Low $T$: the electrons rearrange and screen the moment
- \item Strong coupling: beyond perturbation theory
+ \item Low $T$: the electrons rearrange and \colorbox{cKondo!20}{\mystrut screen the moment}
+ \item Strong coupling: \colorbox{citron!40}{\mystrut beyond perturbation theory}
 \end{itemize}}
 \vspace{0.5cm}
 \onslide<3->{\centering{\Large $T_K = D\,e^{-1/\tikz[remember picture,baseline=0pt]\coordinate(rho);{\color{cKondo}\rho_0}J}$}\par}
@@ -56,7 +56,8 @@
 % 2  Graphene
 % ============================================================
 \begin{frame}[t]
-\ft{No Kondo effect in graphene at charge neutrality}
+\ft{No Kondo effect in graphene at charge neutrality}\par
+\vspace{0.3cm}
 \begin{columns}[T]
 \begin{column}{0.54\textwidth}
 \centering\includegraphics[width=\linewidth]{figures/prev_graphene_cone.png}\\[2pt]
@@ -71,12 +72,12 @@
  \node[cLM,anchor=north] at (0,-0.3) {$\rho(E_F)=0$};
 \end{tikzpicture}\\[6pt]
 {\Large $T_K = D\,e^{-1/\rho_0 J}$}\\[4pt]
-{\small $\rho_0\to 0\ \Rightarrow\ T_K\to 0$\\ the moment {\color{cLM}stays free}}
+{\small $\rho_0\to 0\ \Rightarrow\ T_K\to 0$\\ the moment \colorbox{cLM!20}{\mystrut stays free}}
 \end{column}
 \end{columns}
 \vspace{0.1cm}
 % fixed-size box, appears at step 2
-\begin{minipage}[t][1.8cm][t]{\linewidth}
+\begin{minipage}[t][1.2cm][t]{\linewidth}
 \uncover<2->{%
 \colorbox{tomato!30}{\mystrut Experiments in graphene}\quad
 \begin{minipage}[c]{0.62\linewidth}\footnotesize H adatoms: González-Herrero et al., Science 352, 437 (2016)\\
@@ -151,8 +152,8 @@ Vacancies: Jiang, \dots, Andrei, Nat. Commun. 9, 2349 (2018)\end{minipage}}
 \begin{column}{0.37\textwidth}
 \raggedright
 \onslide<1->{Dirac cone at $\omega=0$: $\rho\sim|\omega|$\par\medskip}
-\uncover<2->{van Hove peaks at $\pm E_v$\par\medskip}
-\uncover<3->{$1.05^\circ$: the peaks merge}
+\uncover<2->{\colorbox{citron!60}{\mystrut van Hove peaks} at $\pm E_v$\par\medskip}
+\uncover<3->{$1.05^\circ$: \colorbox{pumpkin!60}{\mystrut the peaks merge}}
 \end{column}
 \end{columns}
 \vspace{0.1cm}
@@ -180,7 +181,7 @@ Vacancies: Jiang, \dots, Andrei, Nat. Commun. 9, 2349 (2018)\end{minipage}}
 \small
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.4}
-\begin{minipage}[t][4.6cm][t]{\linewidth}\centering
+\begin{minipage}[t][3.8cm][t]{\linewidth}\centering
 \only<1>{\begin{tabular}{>{\raggedright}p{1.9cm} >{\raggedright}p{3.5cm} >{\centering}p{2.5cm} >{\centering\arraybackslash}p{2.0cm}}
 \hline
  & \multicolumn{1}{c}{Density of states $\rho(\omega)$} & $T_K$ & $S_{\rm imp}(T\to 0)$ \\
@@ -203,10 +204,10 @@ Metal & $\rho_0$ : constant & $D\,e^{-1/\rho_0 J}$ & $0$ \\
 \end{tabular}}
 \end{minipage}\\[2pt]
 {\tiny\color{mygray} Mitchell, Vojta, Bulla, Fritz, PRB 88, 195119 (2013)}
-\vspace{0.4cm}
+\vspace{0.55cm}
 \begin{itemize}\normalsize\raggedright
- \uncover<2->{\item Logarithmic vHs: $T_K$ enhanced over the metal}
- \uncover<2->{\item Higher-order vHs: $T_K$ grows as a power law in $J$}
+ \uncover<2->{\item Logarithmic vHs: $T_K$ \colorbox{cKondo!12}{\mystrut enhanced} over the metal}
+ \uncover<2->{\item Higher-order vHs: $T_K$ grows as a \colorbox{cKondo!12}{\mystrut power law} in $J$}
 \end{itemize}
 \onslide<2->{\tk{In TBG the cone and the vHs sit within a few meV of each other: which one wins?}}
 \end{frame}
@@ -218,7 +219,7 @@ Metal & $\rho_0$ : constant & $D\,e^{-1/\rho_0 J}$ & $0$ \\
 % 5  NRG and the impurity entropy
 % ============================================================
 \begin{frame}[t]
-\ft{NRG settles it non-perturbatively: read the answer off the impurity entropy}
+\ft{NRG: read the answer off the impurity entropy}
 \centering
 \raisebox{-0.2cm}{\begin{tikzpicture}[font=\scriptsize,x=0.85cm,y=0.85cm]
  \begin{scope}
@@ -256,8 +257,8 @@ Metal & $\rho_0$ : constant & $D\,e^{-1/\rho_0 J}$ & $0$ \\
 \vspace{0.3cm}
 \begin{itemize}\small\raggedright
  \onslide<1->{\item A plateau at $\ln\mathbf{N}$: $\mathbf{N}$ \textbf{states} available to the impurity}
- \uncover<4->{\item A step between plateaus: a screening scale, here $T_K$}
- \uncover<4->{\item $S_{\rm imp} = S_{\rm total} - S_{\rm host}$, so it can be negative}
+ \uncover<4->{\item A step between plateaus: a \colorbox{cKondo!20}{\mystrut screening scale}, here $T_K$}
+ \uncover<4->{\item $S_{\rm imp} = S_{\rm total} - S_{\rm host}$, so it \colorbox{citron!40}{\mystrut can be negative}}
 \end{itemize}
 \end{column}
 \end{columns}
@@ -280,9 +281,9 @@ Metal & $\rho_0$ : constant & $D\,e^{-1/\rho_0 J}$ & $0$ \\
 {\tiny\color{mygray} Shankar, Oriekhov, Mitchell, Fritz, PRB 107, 245102 (2023)}\\[-2pt]
 {\tiny\color{mygray} See also: Chang, Yi, Wu, Kugler, Andrei, Vanderbilt, Kotliar, Pixley, PRL 133, 126503 (2024)}\par
 \vspace{4pt}
-\small\onslide<1->{Screening begins at $E_v$; below $E^*\sim|E_v|^3$ the cone wins: {\color{cLM}moment unscreened}\par}
+\small\onslide<1->{Screening begins at $E_v$; below $E^*\sim|E_v|^3$ the cone wins: \colorbox{cLM!20}{\mystrut moment unscreened}\par}
 \vspace{2pt}
-\uncover<2->{Magic angle: $E_v,\,E^*\to 0$, the cone never wins: {\color{cKondo}moment screened}}
+\uncover<2->{Magic angle: $E_v,\,E^*\to 0$, the cone never wins: \colorbox{cKondo!20}{\mystrut moment screened}}
 \onslide<2->{\tk{One impurity is only the dilute limit. What happens when two sit close together?}}
 \end{frame}
 % Notes: Away from the magic angle: flow HO-vHs -> log vHs -> Dirac; entropy dips, overshoots to ln4, ends at ln2: free moment below E*.

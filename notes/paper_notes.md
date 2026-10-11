@@ -296,3 +296,18 @@ gets more emphasis.
   figure twospin_entropy.pdf (make_twospin_entropy.py): both from ln 4 to 0 against T/T*, with
   S(T*) = 1. AFM: gapped, S ~ e^(−J/T), about one decade; Kondo: S ~ T/T_K, several decades.
 - The text width of the deck is about 10.8 cm (beamer default margins): size columns from that.
+
+Later 2026-10-11 (committed): user feedback on the closing picture: the coloured site map is
+"very slightly misleading", because the free moments on stacked sites are RKKY-coupled too. The
+thank-you slide now uses the PAIR MAP of slide 16 (`\pairmap` in macros.tex) with a four-row
+outcome table: A2–A2 FM lock, spin 1; A2–B1 AFM singlet; A1–B2 AFM singlet or Kondo; B2–B2 FM
+lock, then two-stage Kondo. Headline "One host, four pairs, four outcomes". No support section
+(user removed it); email ashankar@ictp.it added. Photos of the collaborators: not found easily,
+left out (user: not important). The conclusion slide keeps the old site map (user likes it) but
+is now top-aligned with highlighted lines.
+Slide 19: fully screened state labelled "spin 0". Slide 17: highlights on "ln 4 → 0" and
+"screened alone".
+TBG pass by Claude, same day: titles of slides 1 and 6 shortened ("The Kondo effect: a magnetic
+impurity in a metal", "NRG: read the answer off the impurity entropy"); key-phrase highlights
+added on slides 1, 2, 4, 5, 6, 7; slide 2 figure moved off the title rule; slide 5 reference
+moved up under the table. No content changed.

@@ -65,3 +65,26 @@
 
 % small pair symbol for tables: two sites of colour #1 joined by a link of colour #2 (same drawing as on the pair map)
 \newcommand{\pairicon}[2]{\tikz[baseline=-0.6ex]{\draw[#2,line width=2.2pt] (0,0)--(0.5,0); \fill[#1] (0,0) circle (0.085); \fill[#1] (0.5,0) circle (0.085);}}
+
+% pair map: the site map (faded) with one example of each of the four pairs on top. #1 = lattice unit in cm.
+% dot colour = the site alone (red free moment, blue Kondo); link colour = RKKY sign (orange FM, green AFM)
+% from the top: A2-A2, A2-B1, B2-B2, A1-B2
+\newcommand{\pairmap}[1][0.5]{%
+\begin{tikzpicture}[x=#1cm,y=#1cm]
+ \clip (-0.45,-0.28) rectangle (7.4,5.75);
+ \foreach \i in {-3,...,5}{\foreach \j in {-2,...,4}{
+   \pgfmathsetmacro{\cx}{1.7321*\i+0.8660*\j}\pgfmathsetmacro{\cy}{1.5*\j}
+   \draw[mygray!70,line width=0.4pt] (\cx,\cy+1)--(\cx+0.866,\cy+0.5) (\cx,\cy+1)--(\cx-0.866,\cy+0.5) (\cx,\cy+1)--(\cx,\cy+2);
+ }}
+ \foreach \i in {-3,...,5}{\foreach \j in {-2,...,4}{
+   \pgfmathsetmacro{\cx}{1.7321*\i+0.8660*\j}\pgfmathsetmacro{\cy}{1.5*\j}
+   \fill[cKondo!25] (\cx,\cy+1) circle (0.2);
+   \fill[cLM!25] (\cx,\cy-1) circle (0.2); \draw[cLM!25,line width=0.8pt] (\cx,\cy-1) circle (0.32);
+   \fill[cKondo!25] (\cx,\cy) circle (0.2);
+ }}
+ % from the top: A2-A2, A2-B1, B2-B2, A1-B2
+ \foreach \xa/\ya/\xb/\yb/\cs/\cl in {0/5/1.732/5/cLM/cFM, 4.330/3.5/6.062/3.5/cLM/cAFM,
+                                      0.866/1.5/2.598/1.5/cKondo/cFM, 5.196/1/5.196/0/cKondo/cAFM}{
+   \draw[\cl,line width=3pt] (\xa,\ya)--(\xb,\yb);
+   \fill[\cs] (\xa,\ya) circle (0.24); \fill[\cs] (\xb,\yb) circle (0.24);}
+\end{tikzpicture}}

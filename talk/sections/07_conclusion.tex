@@ -1,21 +1,24 @@
 % ============================================================
 % 15  Conclusion
 % ============================================================
-\begin{frame}
-\ft{One host, every screening regime: the impurity position selects it}
+\begin{frame}[t]
+\ft{One host, every screening regime: the impurity position selects it}\par
+\vspace{0.8cm}
 \begin{columns}[c]
-\begin{column}{0.46\textwidth}
-\centering\sitemap[1.25]{3}\\[3pt]
-\legend{3}
+\begin{column}{0.42\textwidth}
+\centering\sitemap[1.15]{3}\\[4pt]
+\legend{3}\par
 \end{column}
-\begin{column}{0.52\textwidth}
-\begin{itemize}
- \item Stacked: free moment, never screened
- \item Unstacked: Kondo, AFM singlet, FM two-stage
- \item Position and pairing pick the regime
-\end{itemize}
+\begin{column}{0.56\textwidth}
+\colorbox{cLM!20}{\mystrut Stacked sites}\\[2pt]
+free moment, never screened\par
 \vspace{0.3cm}
-{\small\textbf{Outlook:} STM on BLG, artificial impurity arrays, RKKY in TBG}
+\colorbox{cKondo!20}{\mystrut Unstacked sites}\\[2pt]
+Kondo, \colorbox{cAFM!25}{\mystrut AFM singlet}, \colorbox{cFM!30}{\mystrut FM two-stage}\par
+\vspace{0.3cm}
+\colorbox{citron!40}{\mystrut Position and pairing} pick the regime\par
+\vspace{0.5cm}
+{\small\textbf{Outlook:} STM on BLG,\\ artificial impurity arrays, RKKY in TBG\par}
 \end{column}
 \end{columns}
 \tk{Site selectivity: every Kondo regime in one sample}
@@ -29,38 +32,42 @@
 % Thank you
 % ============================================================
 \begin{frame}[t]
-\ft{Thank you}
-\vspace{0.3cm}
+\ft{Thank you}\par
+\vspace{0.7cm}
 \begin{columns}[c]
-\begin{column}{0.46\textwidth}
+\begin{column}{0.50\textwidth}
 \centering
-\colorbox{citron!40}{\mystrut One host, four screening regimes}\\[6pt]
-\sitemap[1.1]{3}\\[3pt]
-\legend{3}\par
+\colorbox{citron!40}{\mystrut One host, four pairs, four outcomes}\\[6pt]
+\pairmap[0.42]\\[6pt]
+{\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}l l@{}}
+ \pairicon{cLM}{cFM}\ A2--A2 & \textcolor{cFM}{FM lock}: spin 1\\
+ \pairicon{cLM}{cAFM}\ A2--B1 & \textcolor{cAFM}{AFM singlet}\\
+ \pairicon{cKondo}{cAFM}\ A1--B2 & \textcolor{cAFM}{AFM singlet} or \textcolor{cKondo}{Kondo}\\
+ \pairicon{cKondo}{cFM}\ B2--B2 & \textcolor{cFM}{FM lock}, then \textcolor{cKondo}{two-stage Kondo}
+\end{tabular}\par}
 \end{column}
-\begin{column}{0.52\textwidth}
+\begin{column}{0.48\textwidth}
 \centering
-{\small\setlength{\tabcolsep}{5pt}
+{\small\setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}l l@{}}
  \multicolumn{2}{@{}l}{\textbf{With}}\\[2pt]
  D. O. Oriekhov & TU Delft\\
  L. Fritz & Utrecht University\\
- A. K. Mitchell & University College Dublin\\[8pt]
- \multicolumn{2}{@{}l}{\textbf{Support}}\\[2pt]
- \multicolumn{2}{@{}l}{Kavli Foundation}\\
- \multicolumn{2}{@{}l}{DelftBlue supercomputer, TU Delft}
+ A. K. Mitchell & University College Dublin
 \end{tabular}\par}
-% TODO (user): add your own funding and the conference sponsors to the Support lines.
 \vspace{0.6cm}
-\includegraphics[width=0.9\linewidth]{figures/logo_ictp.png}\par
+\colorbox{citron!40}{\mystrut ashankar@ictp.it}\par
+\vspace{0.6cm}
+\includegraphics[width=0.95\linewidth]{figures/logo_ictp.png}\par
 \end{column}
 \end{columns}
-\vspace{0.35cm}
+\vspace{0.7cm}
 \centering
 {\footnotesize\begin{tabular}{@{}l@{\ \ }l@{}}
  Twisted bilayer: & Shankar, Oriekhov, Mitchell, Fritz, PRB 107, 245102 (2023)\\
  Bernal bilayer: & Shankar, Oriekhov, Fritz, Mitchell, manuscript in preparation
 \end{tabular}\par}
 \end{frame}
-% Notes: Leave this slide up during questions: the map is the whole talk in one picture.
-% Notes: Red = free moment (stacked sites), blue = Kondo (unstacked sites), green link = AFM singlet (A1-B2), orange link = FM pair with two-stage Kondo (B2-B2).
+% Notes: Leave this slide up during questions: the four pairs are the whole talk in one picture.
+% Notes: Dot colour = what the site does alone (red: no Kondo, blue: Kondo). Link colour = RKKY sign (orange FM, green AFM). Every pair is RKKY coupled, the stacked ones too; only on unstacked sites does Kondo compete.

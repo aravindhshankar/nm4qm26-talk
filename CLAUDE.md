@@ -107,6 +107,8 @@ macOS has no `timeout` command. Do not run `build.sh` from a subagent (it opens 
   Use them a bit more freely (user, 2026-10-11): method names and key terms such as NRG and RGF
   are good highlights; two or three per slide is the norm, not the exception. A highlight may
   match the colour of the curve or regime it names (RGF in the green of its curve).
+  Text without a highlight does not get read (user, 2026-10-11: "people won't read so much text if
+  it doesn't have highlighting"): every text line that matters carries one highlighted key phrase.
   Caution (Claude's note): spinach is the same RGB as the AFM regime green and pumpkin is close
   to the FM orange, so on slides that show those regimes pick a different highlight colour.
 - ALIGNMENT (user, 2026-10-11: "the alignment is something you're missing often"). Before
@@ -130,6 +132,9 @@ macOS has no `timeout` command. Do not run `build.sh` from a subagent (it opens 
 - Keep the .tex hand-editable: the user edits offline too. Plain beamer, one section per file,
   no generated code, no clever macros. Prefer editing one section file per change.
 - Speaker notes are `% Notes:` comments under each frame.
+- `\ft{...}` does not end its paragraph. If the frame body starts with plain text, a figure or a
+  tikzpicture (anything but `columns`), write `\ft{...}\par`, or the body lands on the title rule.
+- The text width is about 10.8 cm: size columns, minipages and TikZ pictures from that.
 
 ## Figures
 The deck compiles from the repo alone; no .tex file references the paper PDFs. Keep it that way.
