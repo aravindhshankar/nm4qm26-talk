@@ -342,3 +342,9 @@ five stroke colours inside the PDF: J = 1 AFM green ... J = 10 Kondo blue; the o
 split_CombFigr_0site2r0_grid.pdf is untouched). The same trick would work on the FM figures
 (Figs. 8, 9, also blue-to-red in J or x) if ever wanted; not done, nobody asked.
 Committed and pushed at the user's request.
+
+2026-10-11, last round: slide 17 is BACK on the user's original Fig. 5 (the user worries about
+blue-green colour blindness; tritan deficiency is real though rare). The recoloured copy
+figures/fig5_regime_colours.pdf and its script stay in the repo, unused. Slide 16: Jayaprakash,
+Krishna-murthy, Wilkins, PRL 47, 737 (1981) cited under the table. All small references and
+captions now use `citegray` (gray 0.35, darker than before), defined once in preamble.tex.

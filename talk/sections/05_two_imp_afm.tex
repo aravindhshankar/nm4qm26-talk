@@ -21,7 +21,7 @@
  opposite sublattice: & \colorbox{cAFM!25}{\mystrut AFM}
 \end{tabular}\par
 \vspace{0.1cm}
-{\tiny\color{mygray} Saremi, PRB 76, 184430 (2007)\par}
+{\tiny\color{citegray} Saremi, PRB 76, 184430 (2007)\par}
 \vspace{0.4cm}
 {\small\setlength{\tabcolsep}{4.5pt}\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{@{}l l l l@{}}
@@ -31,6 +31,8 @@
  \pairicon{cKondo}{cAFM}\ A1--B2 & \textcolor{cAFM}{AFM} & \textcolor{cKondo}{Kondo} & \onslide<2->{\colorbox{citron!40}{\mystrut RKKY vs Kondo}}\\
  \pairicon{cKondo}{cFM}\ B2--B2 & \textcolor{cFM}{FM} & \textcolor{cKondo}{Kondo} & \onslide<2->{\colorbox{citron!40}{\mystrut RKKY vs Kondo}}\\
 \end{tabular}\par}
+\vspace{0.15cm}
+{\tiny\color{citegray} Jayaprakash, Krishna-murthy, Wilkins, PRL 47, 737 (1981)\par}
 \end{column}
 \end{columns}
 \end{frame}
@@ -47,13 +49,13 @@
 \ft{A1--B2: from AFM singlet to Kondo}\par
 \vspace{0.3cm}
 {\centering\small\colorbox{citron!40}{\mystrut Kondo model}\ \ two spins $\tfrac12$, so $\ln 4$ = two free spins\\[1pt]
-{\tiny\color{mygray}(twisted bilayer part: Anderson model, $\ln 4$ = four orbital states)}\par}
+{\tiny\color{citegray}(twisted bilayer part: Anderson model, $\ln 4$ = four orbital states)}\par}
 \vspace{0.15cm}
 \begin{columns}[c]
 \begin{column}{0.45\textwidth}
-\centering\includegraphics[height=5.6cm]{figures/fig5_regime_colours.pdf}\par
+\centering\includegraphics[height=5.6cm]{figures/split_CombFigr_0site2r0_grid.pdf}\par
 \vspace{0.05cm}
-{\tiny\color{mygray} Top: entropy. Bottom: spin susceptibility.\\ Right: rescaled by $J_{\rm screen}$; dashed: universal curves\par}
+{\tiny\color{citegray} Top: entropy. Bottom: spin susceptibility.\\ Right: rescaled by $J_{\rm screen}$; dashed: universal curves\par}
 \end{column}
 \begin{column}{0.53\textwidth}
 % weak J: the two moments form a singlet with each other
@@ -95,11 +97,11 @@ broad Kondo peak
 \end{frame}
 % Notes: Model reminder: from the single-impurity BLG slides on this is the Kondo model, spins 1/2 coupled by J. So ln 4 here is two free spins, 2 ln 2; in the TBG part it was the four states of one Anderson orbital.
 % Notes: The first competing pair: A1 and B2 in the same unit cell, opposite sublattices, both unstacked. AFM RKKY against Kondo.
-% Notes: Weak coupling (green curves): the two spins bind into a singlet with each other. The entropy drops from ln 4 straight to 0 at J_RKKY and follows the two-spin model J_RKKY S1.S2 (top right, dashed). The susceptibility has a sharp singlet-triplet excitation at J_RKKY.
-% Notes: Strong coupling (blue curves): each moment is Kondo screened by the electrons. Broad crossover, broad peak, as for a single impurity (bottom right panels).
+% Notes: Weak coupling (blue curves): the two spins bind into a singlet with each other. The entropy drops from ln 4 straight to 0 at J_RKKY and follows the two-spin model J_RKKY S1.S2 (top right, dashed). The susceptibility has a sharp singlet-triplet excitation at J_RKKY.
+% Notes: Strong coupling (red curves): each moment is Kondo screened by the electrons. Broad crossover, broad peak, as for a single impurity (bottom right panels).
 % Notes: In between: a smooth crossover, not a transition (the Jones-Varma critical point needs particle-hole symmetry, which BLG does not have).
 % Notes: J_screen is defined by S(J_screen) = 1. The grey dashed line is the temperature at which chi was computed.
-% Notes: Figure: figures/fig5_regime_colours.pdf, a recoloured copy of the draft figure (make_fig5_regime_colours.py): green = weak J, blue = strong J, to match the regime colours.
+% Notes: The figure is the original (blue = weak J, red = strong J). A recoloured copy, green to blue, is kept in figures/fig5_regime_colours.pdf in case it is wanted: swap the file name in \includegraphics.
 % Notes: Site map: the green link is the AFM singlet.
 
 % ============================================================
@@ -112,7 +114,7 @@ broad Kondo peak
 \begin{column}{0.49\textwidth}
 \centering\colorbox{citron!40}{\mystrut against the coupling $J$}\\[4pt]
 \includegraphics[height=3.5cm]{figures/AFM_scalingwithJ0v4.pdf}\par
-{\tiny\color{mygray} $J_{\rm screen}$ from the entropy, $S(J_{\rm screen})=1$\par}
+{\tiny\color{citegray} $J_{\rm screen}$ from the entropy, $S(J_{\rm screen})=1$\par}
 \vspace{0.25cm}
 \begin{tabular}{@{}l@{\ \ }l@{}}
  weak $J$: & $J_{\rm screen}\propto J^2$\\[2pt]
@@ -122,7 +124,7 @@ broad Kondo peak
 \begin{column}{0.49\textwidth}
 \centering\colorbox{citron!40}{\mystrut against the distance $r$}\\[4pt]
 \includegraphics[height=3.5cm]{figures/JvsrSiteAFM.pdf}\par
-{\tiny\color{mygray} $J_{\rm screen}$ from the peak of the spin susceptibility\par}
+{\tiny\color{citegray} $J_{\rm screen}$ from the peak of the spin susceptibility\par}
 \vspace{0.25cm}
 \begin{tabular}{@{}l@{\ \ }l@{}}
  weak $J$: & $J_{\rm screen}\sim r^{-1.14}$\\[2pt]

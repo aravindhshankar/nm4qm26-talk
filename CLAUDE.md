@@ -126,7 +126,8 @@ macOS has no `timeout` command. Do not run `build.sh` from a subagent (it opens 
   (conference talks move fast). Use beamer overlays (`\only`, `\onslide`) to bring a dense
   slide in step by step; keep the layout from jumping between steps.
 - References: small grey full reference directly under the figure or claim it belongs to,
-  typed as plain text. Use them throughout, but sparingly: at most two or three per slide.
+  typed as plain text, always as `{\tiny\color{citegray} ...}`: `citegray` is defined once in
+  `preamble.tex` so the user can change the colour of all references in one line. Use them throughout, but sparingly: at most two or three per slide.
 - Regime colours are fixed across the deck (see `macros.tex`): free moment red, Kondo blue,
   AFM singlet green, FM two-stage orange.
 - Keep the .tex hand-editable: the user edits offline too. Plain beamer, one section per file,
