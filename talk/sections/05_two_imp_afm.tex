@@ -55,69 +55,97 @@
 % Notes: Unstacked pairs (A1-B2, B2-B2): RKKY, growing as J^2, against Kondo, growing as exp(-1/J). These two are the rest of the talk.
 
 % ============================================================
-% 10  A1-B2 entropy
+% A1-B2: entropy and spin susceptibility
 % ============================================================
-\begin{frame}
-\ft{A1--B2: an AFM singlet at weak $J$ crosses over to Kondo screening}
-\begin{columns}[T]
-\begin{column}{0.64\textwidth}
-\centering\includegraphics[height=6.7cm]{figures/split_CombFigr_0site2r0_grid.pdf}
+\begin{frame}[t]
+\ft{A1--B2: from AFM singlet to Kondo}\par
+\vspace{0.3cm}
+{\centering\small\colorbox{citron!40}{\mystrut Kondo model}\ \ two spins $\tfrac12$, so $\ln 4$ = two free spins\\[1pt]
+{\tiny\color{mygray}(twisted bilayer part: Anderson model, $\ln 4$ = four orbital states)}\par}
+\vspace{0.15cm}
+\begin{columns}[c]
+\begin{column}{0.45\textwidth}
+\centering\includegraphics[height=5.6cm]{figures/split_CombFigr_0site2r0_grid.pdf}\par
+\vspace{0.05cm}
+{\tiny\color{mygray} Top: entropy. Bottom: spin susceptibility.\\ Right: rescaled by $J_{\rm screen}$; dashed: universal curves\par}
 \end{column}
-\begin{column}{0.34\textwidth}
-\begin{itemize}\small
- \item Weak $J$: entropy $\ln4\to0$ via $\ln2$, effective two-spin model $J_{\rm RKKY}\mathbf S_1\!\cdot\!\mathbf S_2$
- \item Strong $J$: two independent Kondo screenings
- \item Both limits follow universal curves
-\end{itemize}
+\begin{column}{0.53\textwidth}
+% weak J: the two moments form a singlet with each other
+\begin{minipage}[c]{2.0cm}\centering
+\begin{tikzpicture}[x=1cm,y=1cm]
+ \fill[cAFM,opacity=0.18] (0,0) ellipse (0.95 and 0.5); \draw[cAFM] (0,0) ellipse (0.95 and 0.5);
+ \foreach \x/\d in {-0.45/1,0.45/-1}{\draw[cLM,fill=cLM!15,thick] (\x,0) circle (0.2);
+   \draw[->,cLM,>=stealth,line width=1.6pt] (\x,-0.32*\d)--(\x,0.32*\d);}
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[c]{3.6cm}\footnotesize
+{\small\colorbox{cAFM!25}{\mystrut weak $J$: AFM singlet}}\\[3pt]
+the moments bind each other\\
+$\ln 4\to 0$ in one step\\
+sharp peak at $J_{\rm RKKY}$
+\end{minipage}
+
+\vspace{0.35cm}
+% strong J: each moment is Kondo screened
+\onslide<2->{\begin{minipage}[c]{2.0cm}\centering
+\begin{tikzpicture}[x=1cm,y=1cm]
+ \foreach \x/\d in {-0.5/1,0.5/-1}{\fill[cKondo,opacity=0.18] (\x,0) circle (0.45); \draw[cKondo,dashed] (\x,0) circle (0.45);
+   \draw[cLM,fill=cLM!15,thick] (\x,0) circle (0.2);
+   \draw[->,cLM,>=stealth,line width=1.6pt] (\x,-0.32*\d)--(\x,0.32*\d);}
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[c]{3.6cm}\footnotesize
+{\small\colorbox{cKondo!20}{\mystrut strong $J$: Kondo}}\\[3pt]
+each moment screened alone\\
+broad crossover to 0\\
+broad Kondo peak
+\end{minipage}}
+
+\vspace{0.35cm}
+\onslide<3->{\begin{minipage}[c]{2.0cm}\centering\sitemap[0.6]{2}\end{minipage}\hfill
+\begin{minipage}[c]{3.6cm}\legend{2}\end{minipage}}
 \end{column}
 \end{columns}
-\tk{Antiferromagnetic locking and Kondo screening compete at one scale}
 \end{frame}
-% Notes: - Top left: S(T) for several J; side panels: fits of S vs T/J_screen to the universal two-spin curves (App B).
-% - Bottom: chi(omega): at weak coupling a sharp excitation at J_RKKY (singlet-triplet), at strong coupling a broad Kondo peak.
-% - J_screen defined via S(J_screen)=1 (operational scale).
+% Notes: Model reminder: from the single-impurity BLG slides on this is the Kondo model, spins 1/2 coupled by J. So ln 4 here is two free spins, 2 ln 2; in the TBG part it was the four states of one Anderson orbital.
+% Notes: The first competing pair: A1 and B2 in the same unit cell, opposite sublattices, both unstacked. AFM RKKY against Kondo.
+% Notes: Weak coupling (blue curves): the two spins bind into a singlet with each other. The entropy drops from ln 4 straight to 0 at J_RKKY and follows the two-spin model J_RKKY S1.S2 (top right, dashed). The susceptibility has a sharp singlet-triplet excitation at J_RKKY.
+% Notes: Strong coupling (red curves): each moment is Kondo screened by the electrons. Broad crossover, broad peak, as for a single impurity (bottom right panels).
+% Notes: In between: a smooth crossover, not a transition (the Jones-Varma critical point needs particle-hole symmetry, which BLG does not have).
+% Notes: J_screen is defined by S(J_screen) = 1. The grey dashed line is the temperature at which chi was computed.
+% Notes: Site map: the green link is the AFM singlet.
 
 % ============================================================
-% 11  J_screen vs J
+% A1-B2: the screening scale against coupling and distance
 % ============================================================
-\begin{frame}
-\ft{The screening scale goes from $J^2$ (RKKY) to $e^{-1/J}$ (Kondo)}
+\begin{frame}[t]
+\ft{A1--B2: one screening scale, two regimes}
+\vspace{0.35cm}
 \begin{columns}[T]
-\begin{column}{0.66\textwidth}
-\centering\includegraphics[width=\linewidth]{figures/AFM_scalingwithJ0v4.pdf}
+\begin{column}{0.49\textwidth}
+\centering\colorbox{citron!40}{\mystrut against the coupling $J$}\\[4pt]
+\includegraphics[height=3.5cm]{figures/AFM_scalingwithJ0v4.pdf}\par
+{\tiny\color{mygray} $J_{\rm screen}$ from the entropy, $S(J_{\rm screen})=1$\par}
+\vspace{0.25cm}
+\begin{tabular}{@{}l@{\ \ }l@{}}
+ weak $J$: & $J_{\rm screen}\propto J^2$\\[2pt]
+ strong $J$: & $J_{\rm screen}\sim e^{-1/0.017J}$
+\end{tabular}\par
 \end{column}
-\begin{column}{0.33\textwidth}
-\begin{itemize}
- \item Weak $J$: $J_{\rm screen}\propto J^2$
- \item Strong $J$: $\propto e^{-1/J}$
- \item Insets confirm both laws
-\end{itemize}
+\begin{column}{0.49\textwidth}
+\onslide<2->{\centering\colorbox{citron!40}{\mystrut against the distance $r$}\\[4pt]
+\includegraphics[height=3.5cm]{figures/JvsrSiteAFM.pdf}\par
+{\tiny\color{mygray} $J_{\rm screen}$ from the peak of the spin susceptibility\par}
+\vspace{0.25cm}
+\begin{tabular}{@{}l@{\ \ }l@{}}
+ weak $J$: & $J_{\rm screen}\sim r^{-1.14}$\\[2pt]
+ $J=10$: & $J_{\rm screen}\sim r^{-0.21}$, nearly flat
+\end{tabular}\par}
 \end{column}
 \end{columns}
-\tk{Same configuration, two regimes: the competition is non-perturbative}
+\onslide<3->{\tk{Weak $J$: the pair acts together. Strong $J$: each impurity on its own}}
 \end{frame}
-% Notes: - Main panel: J_screen vs J extracted from thermodynamics (S = 1 criterion).
-% - Insets: J_screen vs J^2 at weak coupling; T_K vs 1/J (log scale) at strong coupling -> single-impurity Kondo.
-
-% ============================================================
-% 12  distance
-% ============================================================
-\begin{frame}
-\ft{The distance dependence flattens from $-1.14$ to $-0.21$ with coupling}
-\begin{columns}[T]
-\begin{column}{0.66\textwidth}
-\centering\includegraphics[width=\linewidth]{figures/JvsrSiteAFM.pdf}
-\end{column}
-\begin{column}{0.33\textwidth}
-\begin{itemize}
- \item Perturbative RKKY: slope $-1.14$
- \item $J=10$: slope $-0.21$
- \item Strong coupling approaches the dilute Kondo limit
-\end{itemize}
-\end{column}
-\end{columns}
-\tk{At strong coupling the impurities barely feel each other}
-\end{frame}
-% Notes: - J_screen vs separation r (log-log) for A1-B2 pairs. Slopes: -1.14 (RKKY), -1.07, -0.682, -0.21 at J=10.
-% - Optional slide: cut first if over time (move to backup).
-
+% Notes: One number sums up the crossover: the screening scale J_screen.
+% Notes: Against J (left): at weak coupling it grows as J^2, the perturbative RKKY law (lower inset). At strong coupling it is exponential in 1/J, a single-impurity Kondo temperature (upper inset).
+% Notes: Against distance (right): the perturbative RKKY scale falls off as a power law, slope -1.14 (black). J = 6 follows it (-1.07), J = 8 is flatter (-0.68), and at J = 10 the scale hardly depends on distance (-0.21): the impurities barely feel each other, already close to the dilute limit.
+% Notes: If short of time: say only the take-away line and move on to B2-B2.

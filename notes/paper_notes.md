@@ -249,7 +249,6 @@ mplC0 blue = unstacked A1/B2, mplC1 orange = stacked A2/B1 (defined in preamble.
   opening on "one impurity is the dilute limit; two close by: RKKY vs Kondo".
 - VERIFY units of J and T_K in the plots (eV, kelvin, or bandwidth units?). The user thinks
   T_K is in kelvin; with LDoS in eV⁻¹ it would be eV. Unresolved.
-- Backup "two-spin entropy" frame still has a placeholder; exact forms are above.
 - No slide shows the host Hamiltonian/parameters; a backup model slide was suggested for Q1.
 
 Two-impurity section, slide 16 reworked 2026-10-11 (accepted and committed): "Two impurities:
@@ -259,3 +258,41 @@ as pair / RKKY / each alone, each row led by the same pair symbol (`\pairicon` i
 step 2 adds "RKKY only" (stacked pairs) vs "RKKY vs Kondo" (A1–B2, B2–B2). No Hamiltonian and no
 J² vs e^(−1/J) (both already on slide 8), no punchline box. Draft p6: A2–A2 ends FM-locked,
 A2–B1 as an inter-impurity singlet. Sign-rule reference on the slide (user confirmed): Saremi, PRB 76, 184430 (2007); the draft cites none.
+
+Rest of the two-impurity section reworked 2026-10-11 (committed at the user's request; detailed review still to come). The user finds the
+talk getting long: AFM cut from 3 slides to 2; FM is "the real meat", nothing cut there and it
+gets more emphasis.
+- (17) `05_two_imp_afm.tex` "A1–B2: from AFM singlet to Kondo": Fig. 5 + two cartoon blocks
+  (weak J: the moments bind each other, ln 4 → 0 in one step, sharp peak at J_RKKY; strong J:
+  each moment screened alone, broad crossover, broad Kondo peak) + site map stage 2.
+- (18) "A1–B2: one screening scale, two regimes": Fig. 6 and Fig. 7 side by side (against J:
+  J² → e^(−1/0.017J); against r: r^−1.14 → r^−0.21 at J = 10). Highlights are citron on purpose:
+  the regime colours would clash with the curve colours of Fig. 7.
+- (19) `06_two_imp_fm.tex` "B2–B2: ferromagnetic lock, then two-stage Kondo": Fig. 8 with a
+  ladder of spin cartoons drawn at the height of each entropy plateau (two free spins, FM lock
+  spin 1, half screened below T_K+, fully screened below T_K−), three overlay steps, punchline
+  "Ferromagnetic RKKY does not block Kondo screening: it splits it into two stages".
+- (20) "Further apart: the two stages merge": Fig. 9, close pair vs far apart, site map stage 3.
+- Backup: "why the RKKY sign follows the sublattice" (Eq. 20–21, ρ = ρ_s + ρ_a, with two
+  SKETCHED curves, even and odd in ω: not data; replace with real NLDOS if the user has plots),
+  "A1–B2, screening scale against distance" (Fig. 7 full size, all four slopes), "entropy of two
+  coupled spins" (exact App. B forms; closes the old placeholder open item).
+- TeX gotcha: `\ft{...}` does not end the paragraph. A frame whose body starts with plain
+  centred text or a tikzpicture (not `columns`) needs `\ft{...}\par`.
+- User feedback, same day: the conclusion slide stays as it is ("I like the conclusion slide").
+- Slide 19 cartoon corrected by the user: the ln 2 plateau is NOT "one spin screened, the other
+  free". The EVEN channel screens first (below T_K+), the ODD channel second (below T_K−). Drawn
+  as blue halos around BOTH spins: one halo at ln 2, two at 0. Never draw a halo on one spin.
+- Slide 17 carries the model reminder: "Kondo model: two spins 1/2, so ln 4 = two free spins
+  (twisted bilayer part: Anderson model, ln 4 = four orbital states)".
+- Thank-you slide (end of `07_conclusion.tex`): completed site map as the closing picture ("One
+  host, four screening regimes"), collaborators with affiliation, support, ICTP logo, both
+  papers; the BLG paper is cited as "manuscript in preparation" (no arXiv number yet).
+  Support lines so far only from the draft acknowledgments (Kavli Foundation for D.O.O.,
+  DelftBlue); the user's own funding and the conference sponsors are NOT known: ask.
+  Logo: figures/logo_ictp.png, copied from ~/SlidesTalks/RBM_NQS_ising_basis/ragazzi/
+  (556 x 90 px, low resolution; a better file would be welcome).
+- Backup "AFM singlet or Kondo? The shape of the entropy": exact two-spin forms + computed
+  figure twospin_entropy.pdf (make_twospin_entropy.py): both from ln 4 to 0 against T/T*, with
+  S(T*) = 1. AFM: gapped, S ~ e^(−J/T), about one decade; Kondo: S ~ T/T_K, several decades.
+- The text width of the deck is about 10.8 cm (beamer default margins): size columns from that.
