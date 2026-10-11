@@ -236,10 +236,11 @@ take-away "Free moment or Kondo singlet: the site alone decides"; (15) "The Kond
 two laws": T_K vs 1/J beside the LDoS, ρ_eff = low plateau (weak J, T_K below the van Hove peak)
 or high plateau (strong J), punchline "One site, two Kondo laws: the impurity reads out the van
 Hove singularity" (the user's idea: the impurity picks out the two LDoS plateaus).
-CHECK WITH THE USER: the draft text (Sec. III A) says the two regimes are separated by the "high
-energy van Hove singularity at 3 eV", but its own figures put the two plateaus (red 0.0034, green
-0.010 in Fig. 2) on either side of the LOW-energy peak at 1.6 meV, and the E_vHs line in the
-Fig. 4 inset sits near 1e-3. The slides follow the figures (1.6 meV peak).
+CONFIRMED by the user 2026-10-11: the two regimes are separated by the 1.6 meV (trigonal-warping)
+van Hove peak. The draft text (Sec. III A), which says "high energy van Hove singularity at
+3 eV", is wrong and should be corrected in the paper.
+Slide 13 uses the LDoS curve colours for its labels, an agreed exception to the deck palette:
+mplC0 blue = unstacked A1/B2, mplC1 orange = stacked A2/B1 (defined in preamble.tex).
 
 ## Open items
 - TBG section (7 slides, PDF pages 2–18) committed 2026-10-10 after three build rounds; the

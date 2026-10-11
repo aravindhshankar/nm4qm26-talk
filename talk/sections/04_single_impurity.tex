@@ -3,24 +3,27 @@
 % ============================================================
 \begin{frame}[t]
 \ft{Dilute limit: one impurity, two kinds of site}
-\begin{columns}[T]
+\vspace{0.45cm}
+\begin{columns}[c]
 \begin{column}{0.58\textwidth}
-\vspace{0.6cm}
 \centering\includegraphics[width=\linewidth]{figures/ldos.pdf}
 {\tiny\color{mygray} Local density of states from recursive Green's functions\par}
 \end{column}
-\begin{column}{0.40\textwidth}
-\vspace{0.6cm}
-\centering\sitemap[0.8]{0}\\[2pt]\legend{0}\par
-\vspace{0.3cm}
-\raggedright
-\onslide<2->{\colorbox{citron!40}{\mystrut Unstacked A1/B2}\\[2pt]
-van Hove peak at 1.6 meV\\ between two plateaus\par
-\vspace{0.3cm}
-\colorbox{pumpkin!45}{\mystrut Stacked A2/B1}\\[2pt]
-100 times fewer states\par}
+\begin{column}{0.38\textwidth}
+\centering\sitemap[0.85]{0}\\[4pt]\legend{0}\par
 \end{column}
 \end{columns}
+\vspace{0.45cm}
+\onslide<2->{\begin{columns}[T]
+\begin{column}{0.58\textwidth}
+\centering\colorbox{mplC0!30}{\mystrut Unstacked A1/B2}\\[3pt]
+van Hove peak at 1.6 meV,\\ between two plateaus\par
+\end{column}
+\begin{column}{0.38\textwidth}
+\centering\colorbox{mplC1!35}{\mystrut Stacked A2/B1}\\[3pt]
+100 times fewer states\\ at low energy\par
+\end{column}
+\end{columns}}
 \end{frame}
 % Notes: New section: the dilute limit, one impurity at a time. Where it sits is the only knob.
 % Notes: Bernal BLG: B1 sits on A2 (stacked), A1 and B2 have nothing above or below (unstacked).
@@ -33,20 +36,20 @@ van Hove peak at 1.6 meV\\ between two plateaus\par
 \begin{frame}[t]
 \ft{One impurity: Kondo only on unstacked sites}
 \begin{columns}[T]
-\begin{column}{0.36\textwidth}
+\begin{column}{0.35\textwidth}
 \vspace{0.2cm}
 \centering{\small\colorbox{cLM!20}{\mystrut Stacked A2/B1}}\\[3pt]
 \includegraphics[width=\linewidth]{figures/site2SvsT.pdf}\\[4pt]
-{\small entropy stays at $\ln 2$:\\ \textcolor{cLM}{free moment}\par}
+{\small\colorbox{cLM!20}{\mystrut entropy stays at $\ln 2$}\\[2pt] \textcolor{cLM}{free moment}\par}
 \end{column}
-\begin{column}{0.38\textwidth}
+\begin{column}{0.37\textwidth}
 \vspace{0.2cm}
 \onslide<2->{\centering{\small\colorbox{cKondo!20}{\mystrut Unstacked A1/B2}}\\[3pt]
 \includegraphics[height=5.6cm]{figures/CombFigDyn.pdf}\par}
 \end{column}
-\begin{column}{0.24\textwidth}
+\begin{column}{0.27\textwidth}
 \vspace{0.2cm}
-\onslide<2->{{\small entropy $\ln 2\to 0$\\ at strong coupling:\\ \textcolor{cKondo}{Kondo singlet}\par}}
+\onslide<2->{\centering{\small\colorbox{cKondo!20}{\mystrut entropy $\ln 2\to 0$}\\[2pt] at strong coupling:\\ \textcolor{cKondo}{Kondo singlet}\par}}
 \vspace{0.4cm}
 \onslide<3->{\centering\sitemap[0.62]{1}\\[2pt]\legend{1}\par}
 \end{column}
@@ -63,23 +66,24 @@ van Hove peak at 1.6 meV\\ between two plateaus\par
 % ============================================================
 \begin{frame}[t]
 \ft{The Kondo scale follows two laws}
+\vspace{0.3cm}
 \begin{columns}[T]
-\begin{column}{0.50\textwidth}
-\vspace{0.2cm}
-\centering\includegraphics[width=\linewidth]{figures/TkvsJINSETS.pdf}
-{\tiny\color{mygray} Unstacked site A1/B2, NRG\\ Inset: poor man's scaling, Anderson, J. Phys. C 3, 2436 (1970)\par}
+\begin{column}{0.49\textwidth}
+\centering\includegraphics[height=3.45cm]{figures/TkvsJINSETS.pdf}\par
+{\tiny\color{mygray} $T_K$ on the unstacked site A1/B2, NRG\\ Inset: poor man's scaling, Anderson, J. Phys. C 3, 2436 (1970)\par}
 \end{column}
-\begin{column}{0.48\textwidth}
-\vspace{0.2cm}
-\onslide<2->{\centering\includegraphics[width=0.9\linewidth]{figures/ldos.pdf}\par}
+\begin{column}{0.49\textwidth}
+\onslide<2->{\centering\includegraphics[height=3.45cm]{figures/ldos.pdf}\par
+{\tiny\color{mygray} Local density of states\\ Dashed lines: the two plateaus of A1/B2\par}}
 \end{column}
 \end{columns}
-\vspace{0.25cm}
+\vspace{0.3cm}
 \centering
-{\large $T_K \sim D\,e^{-1/\rho_{\rm eff}J}$}\qquad
-\onslide<2->{\begin{tabular}{@{}l@{\ \ }l@{}}
- weak $J$, \ \,$T_K$ below the van Hove peak: & $\rho_{\rm eff}=$ \colorbox{tomato!35}{\mystrut low plateau}\\[3pt]
- strong $J$, $T_K$ above the van Hove peak: & $\rho_{\rm eff}=$ \colorbox{spinach!30}{\mystrut high plateau}
+{\large $T_K \sim D\,e^{-1/\rho_{\rm eff}J}$}\par
+\vspace{0.15cm}
+\onslide<2->{\begin{tabular}{@{}l@{\ }l@{}}
+ weak $J$: \ \,$T_K$ \colorbox{tomato!35}{\mystrut below} the van Hove peak, & $\rho_{\rm eff}=$ \colorbox{tomato!35}{\mystrut low plateau}\\[3pt]
+ strong $J$: $T_K$ \colorbox{spinach!30}{\mystrut above} the van Hove peak, & $\rho_{\rm eff}=$ \colorbox{spinach!30}{\mystrut high plateau}
 \end{tabular}}\par
 \onslide<3->{\tk{One site, two Kondo laws: the impurity reads out the van Hove singularity}}
 \end{frame}

@@ -109,6 +109,17 @@ macOS has no `timeout` command. Do not run `build.sh` from a subagent (it opens 
   match the colour of the curve or regime it names (RGF in the green of its curve).
   Caution (Claude's note): spinach is the same RGB as the AFM regime green and pumpkin is close
   to the FM orange, so on slides that show those regimes pick a different highlight colour.
+- ALIGNMENT (user, 2026-10-11: "the alignment is something you're missing often"). Before
+  showing a frame, check the render against this list and fix what fails:
+  - side-by-side figures: same height, tops level, each centred in its column;
+  - a label, caption or text block sits centred under (or beside) the item it describes, so
+    rows of columns stacked on a slide use the same column widths;
+  - a small item next to a big one (cartoon beside a figure) is centred vertically on it
+    (`columns[c]`);
+  - sibling blocks are symmetric: same structure, same width, same line count where possible;
+  - text in a narrow column is either all centred or all left-aligned, never mixed;
+  - the content is balanced on the page: no empty band at the bottom while the top is cramped;
+  - nothing wraps by one or two words (break the line deliberately instead).
 - A dense slide is fine if every ingredient on it is simple and is explained clearly
   (conference talks move fast). Use beamer overlays (`\only`, `\onslide`) to bring a dense
   slide in step by step; keep the layout from jumping between steps.
