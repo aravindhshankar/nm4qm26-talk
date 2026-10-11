@@ -208,6 +208,13 @@ B2–B2); refs JKW 1981, Jones–Varma–Wilkins 1988, Affleck–Ludwig PRL 68, 
 Affleck–Ludwig–Jones PRB 52, 9528 (1995), cited without discussion; punchline: the low-energy
 local and non-local DoS must be well resolved. (11) "The DoS on every energy scale": Fig. 11
 comparison. (12) "Fast recursive Green's functions": Fig. 10 supercell + doubling drawing.
+Final state (2026-10-11, accepted): slide 10 defines ψ_e/o ∝ ψ(r1) ± ψ(r2); slide 11 has no
+stepwise text, only the punchline box as step 2 ("Direct integration is noisy: unsuitable for the
+logarithmic grid of NRG"); slide 12 tells the chain story (Fourier transform along x, a 1D chain
+of 8-site cells along y per k_x, recursion doubles the chain, adaptive k_x integral with Cuhre),
+with a cartoon of the effective square lattice (y: fast recursion, x: k_x integral). The user
+does not want the matrices M, P, Q named. Cuba is cited: Hahn, Comput. Phys. Commun. 168, 78
+(2005), and Buchner's Python interface, github.com/JohannesBuchner/cuba.
 The old stacked/unstacked LDoS frame stays after them for now; rework it with the single-impurity
 section. The old RGF frame is deleted.
 

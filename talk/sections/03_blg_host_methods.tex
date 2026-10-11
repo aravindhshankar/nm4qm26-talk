@@ -85,16 +85,15 @@ Affleck, Ludwig, Jones, PRB 52, 9528 (1995)\par}}
 {\tiny\color{mygray} LDoS on an unstacked site (A1/B2). $\delta_{1,2}$: two Lorentzian broadenings\par}
 \end{column}
 \begin{column}{0.40\textwidth}
-\vspace{0.7cm}
-\onslide<1->{NRG samples the DoS\\ logarithmically, down to\\[2pt] \colorbox{citron!40}{\mystrut far below 1 meV}\par}
+\vspace{0.9cm}
+NRG: logarithmic energy grid,\\ down to \colorbox{citron!40}{\mystrut far below 1 meV}\par
 \vspace{0.5cm}
-\onslide<2->{The van Hove peak:\\ $\sim 10^{-4}$ of the Brillouin zone\par
-\vspace{0.1cm}
-{\small direct 2D $k$-integration:\\ noisy, or the peak is smeared\par}}
+van Hove peak:\\ $\sim 10^{-4}$ of the Brillouin zone\par
 \vspace{0.5cm}
-\onslide<3->{Recursive Green's functions:\\ smooth, peak resolved\par}
+Recursive Green's functions:\\ smooth, peak resolved\par
 \end{column}
 \end{columns}
+\onslide<2->{\tk{Direct integration is noisy: unsuitable for the logarithmic grid of NRG}}
 \end{frame}
 % Notes: The inset is the meV window around the van Hove peak at 1.6 meV.
 % Notes: Direct 2D integration: the broad broadening smears the van Hove peak; the small broadening is noisy at all energies.
@@ -110,6 +109,23 @@ Affleck, Ludwig, Jones, PRB 52, 9528 (1995)\par}}
 \vspace{0.2cm}
 \includegraphics[width=\linewidth]{figures/BLG_regv2.pdf}
 {\tiny\color{mygray} Bilayer graphene redrawn as a square lattice of 8-site cells\par}
+\vspace{0.15cm}
+\centering
+\begin{tikzpicture}[x=0.6cm,y=0.56cm,font=\scriptsize]
+ % effective square lattice of 8-site cells (y to the right, x downwards, as in the figure above)
+ \foreach \j in {0,1,2}{\draw[mygray,line width=0.6pt] (-0.35,-\j) -- (5.35,-\j);}
+ \foreach \i in {0,...,5}{\draw[mygray,line width=0.6pt] (\i,0.35) -- (\i,-2.35);}
+ \foreach \i in {0,...,5}{\foreach \j in {0,1,2}{\draw[mygraydark,dashed,fill=citron!25] (\i-0.3,-\j-0.3) rectangle (\i+0.3,-\j+0.3);}}
+ % y: the direction of the fast recursion
+ \draw[->,>=stealth,line width=1.0pt] (-0.3,-2.85) -- (5.3,-2.85);
+ \node[anchor=north] at (2.5,-2.9) {$y$: fast recursion};
+ % x: Fourier transform, then the adaptive k_x integral
+ \draw[->,>=stealth,line width=1.0pt] (-0.9,0.3) -- (-0.9,-2.3);
+ \node[rotate=90,anchor=south] at (-0.95,-1.0) {$x$: $k_x$ integral};
+\end{tikzpicture}\par
+\vspace{0.05cm}
+\raggedright{\tiny\color{mygray} Cuba (Cuhre): Hahn, Comput. Phys. Commun. 168, 78 (2005)\\
+Python interface: Buchner, github.com/JohannesBuchner/cuba\par}
 \end{column}
 \begin{column}{0.55\textwidth}
 \vspace{0.2cm}
@@ -138,7 +154,7 @@ Affleck, Ludwig, Jones, PRB 52, 9528 (1995)\par}}
  \node[mygraydark,anchor=west] at (1.2,-0.6) {$N$ steps: $2^N$ cells, only $8\times 8$ matrices};
 \end{tikzpicture}\par}
 \vspace{0.2cm}
-\onslide<3->{3. Adaptive integral over $k_x$:\par
+\onslide<3->{3. Adaptive integral over $k_x$ (Cuhre):\par
 \vspace{0.05cm}
 \centering{\small $G(\vec r,\omega)=\int\!\frac{dk_x}{2\pi}\,e^{ik_x x}\,G_{\rm chain}(k_x,\omega)$\\[4pt] $\Rightarrow$\ \ \colorbox{orchid!30}{\mystrut $\rho(0,\omega),\ \rho(\vec r,\omega)$}}\par}
 \vspace{0.2cm}
@@ -150,7 +166,7 @@ Lewenkopf, Mucciolo, J. Comput. Electron. 12, 203 (2013)\par}
 % Notes: Redraw BLG as a square lattice of 8-site cells (left). Fourier transform along x: for each k_x what is left is a 1D chain of cells along y.
 % Notes: The recursion is the Lopez Sancho quick iterative scheme; our code is built on it.
 % Notes: Each step is only 8x8 matrix algebra and doubles the length, so 2^N cells cost N steps.
-% Notes: The remaining k_x integral is done with an adaptive cubature (Cuhre).
+% Notes: The remaining k_x integral is done with an adaptive cubature: the Cuhre routine of the Cuba library (Hahn), through Buchner's Python interface.
 % Notes: Output: the local and non-local Green's function at any energy, with broadening as small as needed.
 
 % ============================================================
