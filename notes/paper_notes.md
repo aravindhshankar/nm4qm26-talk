@@ -73,6 +73,43 @@ Two impurities (Sec. IV), direct exchange I_D = 0:
   Curves for J = 5 … 10. With distance, T_K− grows (inset: ~ r^6) and the two scales merge into
   the single-impurity dilute limit.
 
+RKKY formulas (Sec. IV, p5–6, App. D p12; looked up 2026-10-10/11). ρ(x,ω) = −Im G(x,ω), with NO 1/π
+(App. D, checked 2026-10-11: the 1/π² sits in the measure dΩ1dΩ2/π²), is the NON-LOCAL DoS
+between the two impurity sites, G the non-local host Green's function. General form (Eq. D3,
+first line) has ρ(x,Ω1)ρ(−x,Ω2), same as ρ(−x,Ω1)ρ(x,Ω2) by relabelling; ρ(−x) = ρ(x) in BLG
+(checked numerically, valid for η → 0). The talk slide writes ρ(−r,Ω1)ρ(r,Ω2) (user's choice).
+- Model, Eq. 15: H = Σ_k ε_k c†_k c_k + J Σ_{l=1,2} S_l·σ(r_l) + I_D S_1·S_2; I_eff = J_RKKY + I_D,
+  and I_D = 0 throughout.
+- Eq. 19 (one loop): J_RKKY = 2J² ∫_{−W−}^{E_F−ε} dΩ1/π ∫_{E_F+ε}^{W+} dΩ2/π
+  ρ(x,Ω1)ρ(x,Ω2)/(Ω1−Ω2) + 2J² REG{[ρ(x,E_F)]²}. W± = bandwidths, ε = small cutoff around E_F.
+- Eq. 20: ρ = ρ_s + ρ_a (even / odd under ω → −ω).
+- Eq. 21 (particle-hole symmetric, W+ = W− = W): J_RKKY = −2J² ∫_0^W dΩ1/π ∫_0^W dΩ2/π
+  [ρ_s(Ω1)ρ_s(Ω2) − ρ_a(Ω1)ρ_a(Ω2)]/(Ω1+Ω2). Denominator positive, so ρ_s dominant gives FM
+  (same sublattice) and ρ_a dominant gives AFM (opposite sublattice).
+- Earlier RKKY in BLG is perturbative only (draft refs 37–42, 55): Jiang et al., J. Phys.: Condens.
+  Matter 24, 206003 (2012); Parhizgar, Bahrami, Asgari, PRB 87, 125402 (2013); Parhizgar,
+  Sherafati, Asgari, Satpathy, PRB 87, 165429 (2013); Klier, Shallcross, Pankratov, PRB 90,
+  245118 (2014); Klier et al., PRB 92, 205414 (2015) and PRB 94, 205436 (2016); Mohammadi,
+  arXiv:1402.2970. The competition with Kondo in BLG is open: that is the gap the talk fills.
+- Two-impurity Kondo refs in the draft: Jayaprakash, Krishna-murthy, Wilkins, PRL 47, 737 (1981);
+  Jones, Varma, Wilkins; experiment: Spinelli, Gerrits, Toskovic, Bryant, Ternes, Otte,
+  "Exploring the phase diagram of the two-impurity Kondo problem", Nat. Commun. 6, 10046 (2015)
+  (STM, atoms positioned one by one). The draft names no specific BLG experiment for two moments.
+- The user says "McCann–Koshino 2012": that is the arXiv year (arXiv:1205.6953); cite the 2013 journal.
+- Where the host parameters come from (McCann–Koshino Sec. II.2.3, Fig. 3, Table 1; looked up
+  2026-10-11): the set γ0 = 3.16, γ1 = 0.381, γ3 = 0.38, γ4 = 0.14, Δ' = 0.022 eV is the one
+  "determined by infrared spectroscopy" of bilayer graphene: Kuzmenko, Crassee, van der Marel,
+  Blake, Novoselov, PRB 80, 165406 (2009). So the model is experimentally calibrated, not a toy.
+  Meaning: γ0 in-plane A–B; γ1 vertical B1–A2 (dimer = stacked sites); γ3 skew A1–B2 (non-dimer =
+  unstacked), gives trigonal warping: below the Lifshitz energy ε_L = (γ1/4)(v3/v)² ≈ 1 meV the
+  Fermi line breaks into 1 central + 3 leg pockets (the review does not say "vHs"; the saddle
+  points between the pockets give the low-energy vHs, at about 1.6 meV in the draft's LDoS);
+  γ4 skew A1–A2 / B1–B2 and Δ' (dimer on-site energy): electron–hole asymmetry.
+- RKKY section spec agreed 2026-10-11, `talk/sections/02_rkky.tex`, two frames: (A) RKKY cartoon
+  in the style of the slide-1 Kondo cartoon + Eq. 19 with the non-local ρ highlighted, cite
+  Spinelli; (B) BLG without twist: lattice figure, parameter table with origin (infrared),
+  trigonal-warping vHs emphasised, "RKKY in BLG only perturbative so far". Next: recursion slides.
+
 Figure index (page in the draft PDF):
 Fig 1 lattice + impurity pairs p2 · Fig 2 LDoS A1/B2 vs A2/B1 p2 · Fig 3 single-impurity S(T)
 and χ, A1/B2 p4 · Fig 4 T_K vs 1/J p5 · Table I four configurations p6 · Fig 5 A1–B2 entropy
