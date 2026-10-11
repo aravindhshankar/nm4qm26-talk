@@ -180,6 +180,28 @@ prev_saddle_log.png (p19) · prev_saddle_higher.png (p22) · prev_impurity_sketc
 used: replaced by a TikZ moiré on the model slide; kept as fallback).
 Not used any more but still in the repo: tbg_table1.png (table retyped in LaTeX), tbg_fig1bc.png.
 
+Recursive Green's function method (App. A, p9–11; looked up 2026-10-11):
+- Why: NRG takes the log-resolved DoS / non-local G as input and needs it smooth on ALL scales.
+  The low-energy vHs lives within 1e-4 of the BZ linear size, so a 2D k-grid is too costly.
+- How: redraw BLG as a square Bravais lattice with an 8-site supercell (two BLG cells), Fig. 10.
+  H = H0 + Hx + Hy with 8x8 matrices M (cell), P (x hop), Q (y hop). Single cell
+  G0 = [(ω+iδ) − H0]^-1. Fast recursion along y: each step DOUBLES the ribbon, so N steps give
+  2^N cells (Eqs. A4–A7, only 8x8 matrix algebra). The k_x integral (Eq. A8) is done with an
+  adaptive grid: Cuhre cubature (Cuba library, PyCuba bindings). Output: local and non-local G.
+- Adaptive broadening (Fig. 11 caption): δ = 1e-5 for |ω| < 0.2 meV, 0.05|ω| up to 20 meV, 1e-3
+  above. Fig. 11: RGF vs direct 2D integration with two broadenings; RGF is smooth and resolves
+  the vHs better.
+- Method refs: Lewenkopf, Mucciolo, Castro Neto, PRB 77, 081410 (2008); Lewenkopf, Mucciolo,
+  J. Comput. Electron. 12, 203 (2013); Nguyen, Charlier, J. Comput. Electron. 22, 1215 (2023);
+  Settnes et al., PRB 91, 125408 (2015). Cuhre: Hahn, Comput. Phys. Commun. 168, 78 (2005).
+
+Computed by Claude (2026-10-11): blg_trigonal_warping.pdf, from make_blg_warping.py (4-band
+McCann–Koshino model, same parameters). Near K: central Dirac point at E = 0, three leg Dirac
+points at 0.78 meV, |q|a = 0.0166; conduction saddle (vHs) at 1.589 meV, valence saddle at
+−1.186 meV. This reproduces the draft's 1.6 meV vHs and its particle-hole asymmetry.
+RKKY-in-BLG refs shown on slide 9: Jiang 2012, Parhizgar–Sherafati–Asgari–Satpathy 2013,
+Klier–Shallcross–Pankratov 2014 (the user's "Sherafati–Satpathy" is taken to be the 2013 PRB).
+
 ## Open items
 - TBG section (7 slides, PDF pages 2–18) committed 2026-10-10 after three build rounds; the
   user had approved slides 1 and 6 (hook, NRG) and had not yet seen the final state of the others.

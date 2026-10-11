@@ -80,6 +80,23 @@ macOS has no `timeout` command. Do not run `build.sh` from a subagent (it opens 
   phrase of about 4 to 7 words, e.g. "van Hove singularities in the flat band",
   "Kondo revival at the magic angle". Not a full sentence with a colon and two clauses.
   The same goes for the grey take-away line: short, and a question is fine.
+- The grey take-away line is optional (user, 2026-10-11: "every slide doesn't need a clickbait
+  punchline"). Use it only when the slide has a real punchline; a slide that just describes
+  what we study has none.
+- Physics is shown, not described: where a sentence would explain a band-structure feature,
+  put a picture of it instead (user, 2026-10-11, on trigonal warping).
+- No commentary on other people's work ("only perturbative so far", "X is unknown"): the user
+  finds such statements defensive. Just cite the papers. Cite a field fairly, several groups,
+  not one paper standing for many.
+- Abbreviate so it still reads as a word: "e-h asym.", not a bare "e-h".
+- Slides 1-9 of the 2026-10-11 deck (01_tbg.tex, 02_rkky.tex) are the user-approved reference
+  for style: look at them before designing a new slide.
+  Slide 9 ("Bernal bilayer graphene, no twist") is the user's "exactly how I like my slides":
+  the system drawn on the left; a compact table of what goes in and what each entry does; one
+  row highlighted and tied by colour to a computed figure that shows the consequence, with the
+  key number printed in the figure; small grey references under each element; no punchline box;
+  two overlay steps. (Claude's reading of why it worked: every element is a fact or a picture,
+  nothing is commentary, and the colour link does the explaining.)
 - Text colours must not clash with the curve colours of the figure they annotate; do not draw
   label arrows across data. Prefer a caption beside or under the figure.
 - Cite the source of every borrowed figure under it.
@@ -105,3 +122,6 @@ The deck compiles from the repo alone; no .tex file references the paper PDFs. K
 A new figure from the draft: ask the user for the original PDF. From the published TBG paper:
 400-dpi PNG crop into `talk/figures/tbg_*.png`. From the user's old talk
 (`assets/prev_tbg_talk.pdf`): 400-dpi PNG crop into `talk/figures/prev_*.png`.
+A figure Claude computes: a short script next to it, `talk/figures/make_*.py`, run with
+`~/anaconda3/bin/python` (the default python3 has no numpy). Deck colours, fonts readable at
+slide size.

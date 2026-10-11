@@ -78,37 +78,38 @@ STM experiment: Spinelli et al., Nat. Commun. 6, 10046 (2015)\par}}
 \begin{columns}[T]
 \begin{column}{0.40\textwidth}
 \includegraphics[width=\linewidth]{figures/BLG_regv3.pdf}
+
+\vspace{0.5cm}
+{\tiny\color{mygray} RKKY in bilayer graphene:\\
+Jiang et al., J. Phys.: Condens. Matter 24, 206003 (2012)\\
+Parhizgar, Sherafati, Asgari, Satpathy, PRB 87, 165429 (2013)\\
+Klier, Shallcross, Pankratov, PRB 90, 245118 (2014)\par}
 \end{column}
 \begin{column}{0.58\textwidth}
 \vspace{0.1cm}
 4-band tight binding, \colorbox{citron!40}{\mystrut fitted to infrared spectra}
 \vspace{0.2cm}
 
-\footnotesize\setlength{\tabcolsep}{3pt}
+{\footnotesize\setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}c c l@{}}
  parameter & value (eV) & what it does\\ \hline
  $\gamma_0$ & 3.16 & in-plane A--B hopping\\
  $\gamma_1$ & 0.381 & vertical B1--A2 (stacked sites)\\
  \textcolor<2->{orchid}{$\gamma_3$} & \textcolor<2->{orchid}{0.38} & \textcolor<2->{orchid}{skew A1--B2: trigonal warping}\\
- $\gamma_4$ & 0.14 & skew A1--A2, B1--B2: e--h\\
- $\Delta'$ & 0.022 & stacked-site energy: e--h\\
-\end{tabular}
+ $\gamma_4$ & 0.14 & skew A1--A2, B1--B2: e--h asym.\\
+ $\Delta'$ & 0.022 & stacked-site energy: e--h asym.\\
+\end{tabular}\par}
 
-{\tiny\color{mygray} Model: McCann, Koshino, Rep. Prog. Phys. 76, 056503 (2013)\\ Experiment: Kuzmenko et al., PRB 80, 165406 (2009)}
+{\tiny\color{mygray} Model: McCann, Koshino, Rep. Prog. Phys. 76, 056503 (2013)\\ Experiment: Kuzmenko et al., PRB 80, 165406 (2009)\par}
 
-\vspace{0.2cm}
-\onslide<2->{$\gamma_3$ breaks the Fermi line into pockets: \colorbox{orchid!30}{\mystrut van Hove singularity at $\sim 1.6$ meV}}
-
-\vspace{0.2cm}
-\onslide<3->{RKKY in BLG: perturbative only. Against Kondo: open.
-
-{\tiny\color{mygray} e.g. Klier, Shallcross, Pankratov, PRB 90, 245118 (2014)}}
+\vspace{0.15cm}
+\onslide<2->{\includegraphics[width=0.97\linewidth]{figures/blg_trigonal_warping.pdf}}
 \end{column}
 \end{columns}
-\onslide<3->{\tk{A van Hove singularity three orders of magnitude below $\gamma_0$}}
 \end{frame}
 % Notes: No twist now; the knob is the impurity position.
 % Notes: McCann-Koshino parameters come from infrared spectroscopy on bilayer graphene (Kuzmenko 2009): a realistic host, not a toy.
-% Notes: gamma3 gives trigonal warping, Lifshitz transition near 1 meV, vHs at about 1.6 meV in our LDoS; gamma4 and Delta' break particle-hole symmetry.
-% Notes: Earlier RKKY work in BLG is perturbative; competition with Kondo unknown.
-% Notes: This meV structure is why we need a very accurate low-energy (non-)local DoS: next slide.
+% Notes: gamma3 gives trigonal warping: near K the conduction band has a central pocket and three leg pockets (left panel).
+% Notes: They merge at a saddle point: van Hove singularity at 1.6 meV (and at -1.2 meV in the valence band; gamma4 and Delta' make it asymmetric).
+% Notes: Figure made by figures/make_blg_warping.py from the same 4-band model. q is measured from K.
+% Notes: This meV structure, three orders of magnitude below gamma0, is why we need a very accurate low-energy (non-)local DoS: next slide.
