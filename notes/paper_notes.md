@@ -251,3 +251,11 @@ mplC0 blue = unstacked A1/B2, mplC1 orange = stacked A2/B1 (defined in preamble.
   T_K is in kelvin; with LDoS in eV⁻¹ it would be eV. Unresolved.
 - Backup "two-spin entropy" frame still has a placeholder; exact forms are above.
 - No slide shows the host Hamiltonian/parameters; a backup model slide was suggested for Q1.
+
+Two-impurity section, slide 16 reworked 2026-10-11 (accepted and committed): "Two impurities:
+four kinds of pair". Left: faded site map with one example of each pair (dot colour = the site
+alone, link colour = RKKY sign). Right: sign rule (same sublattice FM, opposite AFM) and Table I
+as pair / RKKY / each alone, each row led by the same pair symbol (`\pairicon` in macros.tex);
+step 2 adds "RKKY only" (stacked pairs) vs "RKKY vs Kondo" (A1–B2, B2–B2). No Hamiltonian and no
+J² vs e^(−1/J) (both already on slide 8), no punchline box. Draft p6: A2–A2 ends FM-locked,
+A2–B1 as an inter-impurity singlet. Sign-rule reference on the slide (user confirmed): Saremi, PRB 76, 184430 (2007); the draft cites none.
