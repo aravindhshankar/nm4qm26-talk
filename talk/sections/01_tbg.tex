@@ -57,31 +57,30 @@
 % ============================================================
 \begin{frame}[t]
 \ft{No Kondo effect in graphene at charge neutrality}\par
-\vspace{0.3cm}
-\begin{columns}[T]
+\vspace{0.4cm}
+\begin{columns}[c]
 \begin{column}{0.54\textwidth}
 \centering\includegraphics[width=\linewidth]{figures/prev_graphene_cone.png}\\[2pt]
-{\tiny\color{mygray} Castro Neto et al., Rev. Mod. Phys. 81, 109 (2009)}
+{\tiny\color{mygray} Castro Neto et al., Rev. Mod. Phys. 81, 109 (2009)\par}
 \end{column}
 \begin{column}{0.44\textwidth}
 \centering
-\begin{tikzpicture}[font=\small,x=1.0cm,y=1.2cm]
- \draw[->] (-1.7,0)--(1.9,0) node[below]{$\omega$}; \draw[->] (0,0)--(0,1.9) node[left]{$\rho(\omega)$};
+\begin{tikzpicture}[font=\small,x=1.0cm,y=1.0cm]
+ \fill[spinach!15] (-1.5,0)--(-1.5,1.5)--(0,0)--(1.5,1.5)--(1.5,0)--cycle;
+ \draw[->,>=stealth] (-1.8,0)--(1.95,0) node[below]{$\omega$}; \draw[->,>=stealth] (0,0)--(0,1.85) node[left]{$\rho(\omega)$};
  \draw[very thick,spinach] (-1.5,1.5)--(0,0)--(1.5,1.5);
- \fill[cLM] (0,0) circle (0.07);
- \node[cLM,anchor=north] at (0,-0.3) {$\rho(E_F)=0$};
+ \fill[cLM] (0,0) circle (0.08);
+ \node[cLM,anchor=north] at (0,-0.1) {$\rho(E_F)=0$};
 \end{tikzpicture}\\[6pt]
-{\Large $T_K = D\,e^{-1/\rho_0 J}$}\\[4pt]
-{\small $\rho_0\to 0\ \Rightarrow\ T_K\to 0$\\ the moment \colorbox{cLM!20}{\mystrut stays free}}
+{\Large $T_K = D\,e^{-1/{\color{cLM}\rho_0}J}$}\\[6pt]
+{\small ${\color{cLM}\rho_0\to 0}$ \ gives \ $T_K\to 0$\\[3pt] the moment \colorbox{cLM!20}{\mystrut stays free}\par}
 \end{column}
 \end{columns}
-\vspace{0.1cm}
-% fixed-size box, appears at step 2
-\begin{minipage}[t][1.2cm][t]{\linewidth}
-\uncover<2->{%
-\colorbox{tomato!30}{\mystrut Experiments in graphene}\quad
-\begin{minipage}[c]{0.62\linewidth}\footnotesize H adatoms: González-Herrero et al., Science 352, 437 (2016)\\
-Vacancies: Jiang, \dots, Andrei, Nat. Commun. 9, 2349 (2018)\end{minipage}}
+\vspace{0.55cm}
+% fixed-size block, appears at step 2
+\begin{minipage}[t][1.0cm][t]{\linewidth}\centering
+\uncover<2->{\colorbox{tomato!30}{\mystrut Magnetic moments in graphene: experiments}\\[3pt]
+{\tiny\color{mygray} H adatoms: González-Herrero et al., Science 352, 437 (2016)\qquad Vacancies: Jiang, \dots, Andrei, Nat. Commun. 9, 2349 (2018)\par}}
 \end{minipage}
 \tk{What happens in other graphene-like materials?}
 \end{frame}
@@ -256,9 +255,9 @@ Metal & $\rho_0$ : constant & $D\,e^{-1/\rho_0 J}$ & $0$ \\
 \begin{column}{0.38\textwidth}
 \vspace{0.3cm}
 \begin{itemize}\small\raggedright
- \onslide<1->{\item A plateau at $\ln\mathbf{N}$: $\mathbf{N}$ \textbf{states} available to the impurity}
+ \onslide<1->{\item A plateau at \colorbox{citron!40}{\mystrut $\ln N$: $N$ states} available to the impurity}
  \uncover<4->{\item A step between plateaus: a \colorbox{cKondo!20}{\mystrut screening scale}, here $T_K$}
- \uncover<4->{\item $S_{\rm imp} = S_{\rm total} - S_{\rm host}$, so it \colorbox{citron!40}{\mystrut can be negative}}
+ \uncover<4->{\item \colorbox{citron!40}{\mystrut $S_{\rm imp} = S_{\rm total} - S_{\rm host}$}}
 \end{itemize}
 \end{column}
 \end{columns}

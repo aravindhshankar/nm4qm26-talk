@@ -311,3 +311,13 @@ TBG pass by Claude, same day: titles of slides 1 and 6 shortened ("The Kondo eff
 impurity in a metal", "NRG: read the answer off the impurity entropy"); key-phrase highlights
 added on slides 1, 2, 4, 5, 6, 7; slide 2 figure moved off the title rule; slide 5 reference
 moved up under the table. No content changed.
+
+Evening 2026-10-11 (committed and pushed at the user's request, a one-off: the rule "never push"
+stands otherwise). Title slide redone by hand (title box, wide moiré strip with two moments,
+name, email, collaborators, ICTP logo, NM4QM 2026). Slide 2 tidied (filled DoS sketch, ρ0 in red
+in the T_K formula, experiments as a highlighted line with grey references). Slide 6: "can be
+negative" removed; highlights on "ln N: N states" and on S_imp = S_total − S_host. Slide 8 (the
+user: "very beautifully done"): in step 1 the second moment now points at an angle, so the two
+do not look aligned. Slide 18: no animation. Slide 21 (conclusion): the pair map and the four
+outcomes replace the old site map, at the user's request; the thank-you slide keeps the same
+picture.

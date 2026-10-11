@@ -3,22 +3,30 @@
 % ============================================================
 \begin{frame}[t]
 \ft{One host, every screening regime: the impurity position selects it}\par
-\vspace{0.8cm}
+\vspace{0.7cm}
 \begin{columns}[c]
-\begin{column}{0.42\textwidth}
-\centering\sitemap[1.15]{3}\\[4pt]
-\legend{3}\par
+\begin{column}{0.40\textwidth}
+\centering\pairmap[0.5]\\[6pt]
+% what the colours mean: dots = one impurity alone, links = sign of the RKKY exchange
+\begin{tikzpicture}[font=\scriptsize,x=1cm,y=0.42cm]
+ \fill[cLM] (0,0) circle (0.08); \node[anchor=west] at (0.15,0) {stacked A2/B1: alone, no Kondo};
+ \fill[cKondo] (0,-1) circle (0.08); \node[anchor=west] at (0.15,-1) {unstacked A1/B2: alone, Kondo};
+ \draw[cFM,line width=2pt] (-0.1,-2)--(0.1,-2); \node[anchor=west] at (0.15,-2) {ferromagnetic RKKY};
+ \draw[cAFM,line width=2pt] (-0.1,-3)--(0.1,-3); \node[anchor=west] at (0.15,-3) {antiferromagnetic RKKY};
+\end{tikzpicture}\par
 \end{column}
-\begin{column}{0.56\textwidth}
-\colorbox{cLM!20}{\mystrut Stacked sites}\\[2pt]
-free moment, never screened\par
-\vspace{0.3cm}
-\colorbox{cKondo!20}{\mystrut Unstacked sites}\\[2pt]
-Kondo, \colorbox{cAFM!25}{\mystrut AFM singlet}, \colorbox{cFM!30}{\mystrut FM two-stage}\par
-\vspace{0.3cm}
+\begin{column}{0.58\textwidth}
+{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}l l@{}}
+ \pairicon{cLM}{cFM}\ A2--A2 & \colorbox{cFM!30}{\mystrut FM lock}: spin 1\\
+ \pairicon{cLM}{cAFM}\ A2--B1 & \colorbox{cAFM!25}{\mystrut AFM singlet}\\
+ \pairicon{cKondo}{cAFM}\ A1--B2 & \colorbox{cAFM!25}{\mystrut AFM singlet} or \colorbox{cKondo!20}{\mystrut Kondo}\\
+ \pairicon{cKondo}{cFM}\ B2--B2 & \colorbox{cFM!30}{\mystrut FM lock}, then \colorbox{cKondo!20}{\mystrut two-stage Kondo}
+\end{tabular}\par}
+\vspace{0.45cm}
 \colorbox{citron!40}{\mystrut Position and pairing} pick the regime\par
-\vspace{0.5cm}
-{\small\textbf{Outlook:} STM on BLG,\\ artificial impurity arrays, RKKY in TBG\par}
+\vspace{0.3cm}
+{\small\textbf{Outlook:} STM on BLG, artificial impurity arrays,\\ RKKY in TBG\par}
 \end{column}
 \end{columns}
 \tk{Site selectivity: every Kondo regime in one sample}

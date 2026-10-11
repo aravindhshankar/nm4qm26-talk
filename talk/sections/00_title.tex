@@ -1,4 +1,27 @@
 \begin{frame}[plain,noframenumbering]
-\titlepage
+\vspace{0.5cm}
+\begin{beamercolorbox}[center,rounded=true,shadow=true,sep=8pt]{title}
+\usebeamerfont{title}\inserttitle
+\end{beamercolorbox}
+\vspace{0.35cm}
+\centering
+% two graphene layers twisted by +-4.5 deg (moire) with two magnetic impurities on top
+\begin{tikzpicture}
+ \clip[rounded corners=8pt] (-5.2,-1.05) rectangle (5.2,1.05);
+ \foreach \c/\a in {cKondo!60/4.5,mygraydark!70/-4.5}{\begin{scope}[rotate=\a]
+  \foreach \i in {-22,...,22}{\foreach \j in {-16,...,16}{
+   \draw[\c,line width=0.2pt] (1.5*0.2*\i,1.732*0.2*\j+0.866*0.2*\i) +(0:0.2) -- +(60:0.2) -- +(120:0.2) -- +(180:0.2) -- +(240:0.2) -- +(300:0.2) -- cycle;
+  }}\end{scope}}
+ \foreach \x/\dx in {-1.3/0.0,1.3/0.28}{
+  \fill[white] (\x,-0.15) circle (0.2); \fill[cLM] (\x,-0.15) circle (0.17);
+  \draw[white,line width=2.6pt,->,>=stealth] (\x,-0.2)--(\x+\dx,0.6); \draw[cLM,line width=1.3pt,->,>=stealth] (\x,-0.2)--(\x+\dx,0.6);}
+\end{tikzpicture}\par
+\vspace{0.45cm}
+{\large Aravindh Swaminathan Shankar}\\[2pt]
+{\footnotesize ashankar@ictp.it}\par
+\vspace{0.3cm}
+{\footnotesize with \ D.~O.~Oriekhov (TU Delft), \ L.~Fritz (Utrecht), \ A.~K.~Mitchell (UC Dublin)\par}
+\vspace{0.45cm}
+\begin{minipage}[c]{0.5\linewidth}\raggedright\includegraphics[width=0.95\linewidth]{figures/logo_ictp.png}\end{minipage}\hfill
+\begin{minipage}[c]{0.3\linewidth}\raggedleft\colorbox{citron!40}{\mystrut NM4QM 2026}\end{minipage}
 \end{frame}
-
