@@ -7,7 +7,12 @@
 \begin{columns}[c]
 \begin{column}{0.33\textwidth}
 \centering
-\pairmap[0.5]
+\pairmap[0.5]\\[5pt]
+% which dot is which kind of site
+\begin{tikzpicture}[font=\scriptsize,x=1cm,y=0.42cm]
+ \fill[cLM] (0,0) circle (0.08); \draw[cLM!60!black,line width=0.6pt] (0,0) circle (0.12); \node[anchor=west] at (0.2,0) {stacked A2/B1};
+ \fill[cKondo] (0,-1) circle (0.08); \node[anchor=west] at (0.2,-1) {unstacked A1/B2};
+\end{tikzpicture}\par
 \end{column}
 \begin{column}{0.66\textwidth}
 \centering
@@ -46,7 +51,7 @@
 \vspace{0.15cm}
 \begin{columns}[c]
 \begin{column}{0.45\textwidth}
-\centering\includegraphics[height=5.6cm]{figures/split_CombFigr_0site2r0_grid.pdf}\par
+\centering\includegraphics[height=5.6cm]{figures/fig5_regime_colours.pdf}\par
 \vspace{0.05cm}
 {\tiny\color{mygray} Top: entropy. Bottom: spin susceptibility.\\ Right: rescaled by $J_{\rm screen}$; dashed: universal curves\par}
 \end{column}
@@ -90,10 +95,11 @@ broad Kondo peak
 \end{frame}
 % Notes: Model reminder: from the single-impurity BLG slides on this is the Kondo model, spins 1/2 coupled by J. So ln 4 here is two free spins, 2 ln 2; in the TBG part it was the four states of one Anderson orbital.
 % Notes: The first competing pair: A1 and B2 in the same unit cell, opposite sublattices, both unstacked. AFM RKKY against Kondo.
-% Notes: Weak coupling (blue curves): the two spins bind into a singlet with each other. The entropy drops from ln 4 straight to 0 at J_RKKY and follows the two-spin model J_RKKY S1.S2 (top right, dashed). The susceptibility has a sharp singlet-triplet excitation at J_RKKY.
-% Notes: Strong coupling (red curves): each moment is Kondo screened by the electrons. Broad crossover, broad peak, as for a single impurity (bottom right panels).
+% Notes: Weak coupling (green curves): the two spins bind into a singlet with each other. The entropy drops from ln 4 straight to 0 at J_RKKY and follows the two-spin model J_RKKY S1.S2 (top right, dashed). The susceptibility has a sharp singlet-triplet excitation at J_RKKY.
+% Notes: Strong coupling (blue curves): each moment is Kondo screened by the electrons. Broad crossover, broad peak, as for a single impurity (bottom right panels).
 % Notes: In between: a smooth crossover, not a transition (the Jones-Varma critical point needs particle-hole symmetry, which BLG does not have).
 % Notes: J_screen is defined by S(J_screen) = 1. The grey dashed line is the temperature at which chi was computed.
+% Notes: Figure: figures/fig5_regime_colours.pdf, a recoloured copy of the draft figure (make_fig5_regime_colours.py): green = weak J, blue = strong J, to match the regime colours.
 % Notes: Site map: the green link is the AFM singlet.
 
 % ============================================================

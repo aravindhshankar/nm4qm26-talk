@@ -321,3 +321,24 @@ user: "very beautifully done"): in step 1 the second moment now points at an ang
 do not look aligned. Slide 18: no animation. Slide 21 (conclusion): the pair map and the four
 outcomes replace the old site map, at the user's request; the thank-you slide keeps the same
 picture.
+
+Audience test 2026-10-11 (haiku subagent as a graphene expert who does not know Kondo/NRG, given
+one image per slide and the speaker notes). Fixed (NOT yet accepted by the user, uncommitted):
+slide 16 legend for the two dot colours; conclusion outlook without the abbreviations STM/BLG/TBG.
+Flagged to the user, open: (1) slide 17, the curve colours of Fig. 5 (blue = weak J, red =
+strong J) clash with the regime colours (blue = Kondo, red = free moment): needs the figure
+recoloured from source; (2) slide 7, the entropy panel legend is unreadable at slide size;
+(3) slides 11 and 13, the 1.6 meV van Hove peak is hard to see next to the 3 eV peaks / on the
+symlog axis; (4) slide 15, the inset (poor man's scaling) quotes other rho values than the main
+legend; (5) slide 18, J_screen is defined from the entropy on the left and from the
+susceptibility peak on the right, and the unit of r is not given; (6) slide 20, the dashed
+purple line in Fig. 9 is unlabelled; (7) NRG is never written out in full on a slide.
+
+2026-10-11, late: the user accepted the two audience-test fixes (slide 16 dot legend, outlook
+without abbreviations) and said only complaint (1), the slide 17 colour clash, matters; the
+other flagged points are to be ignored. Fix for (1): `figures/fig5_regime_colours.pdf`, a
+recoloured COPY of the draft's Fig. 5 made by `figures/make_fig5_regime_colours.py` (swaps the
+five stroke colours inside the PDF: J = 1 AFM green ... J = 10 Kondo blue; the original
+split_CombFigr_0site2r0_grid.pdf is untouched). The same trick would work on the FM figures
+(Figs. 8, 9, also blue-to-red in J or x) if ever wanted; not done, nobody asked.
+Committed and pushed at the user's request.
