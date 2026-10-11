@@ -215,6 +215,10 @@ of 8-site cells along y per k_x, recursion doubles the chain, adaptive k_x integ
 with a cartoon of the effective square lattice (y: fast recursion, x: k_x integral). The user
 does not want the matrices M, P, Q named. Cuba is cited: Hahn, Comput. Phys. Commun. 168, 78
 (2005), and Buchner's Python interface, github.com/JohannesBuchner/cuba.
+Slide 11 restructured later the same day (user: say why there is a 2D integral at all): an
+equation strip on top, G(k,ω) = [ω+iδ−H(k)]^-1 "immediate from H(k)" → "the impurity is local" →
+G(r,ω) = ∫_BZ d²k/(2π)² e^{ik·r} G(k,ω) "a 2D integral at every energy"; figure and three lines
+below; punchline box as the only overlay step.
 The old stacked/unstacked LDoS frame stays after them for now; rework it with the single-impurity
 section. The old RGF frame is deleted.
 

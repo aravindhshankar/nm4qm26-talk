@@ -78,26 +78,38 @@ Affleck, Ludwig, Jones, PRB 52, 9528 (1995)\par}}
 % ============================================================
 \begin{frame}[t]
 \ft{The DoS on every energy scale}
+\centering
+\begin{tikzpicture}[font=\small]
+ \path (0,1.25); % room under the title rule
+ % momentum space: the Green's function is immediate from the band Hamiltonian
+ \node[anchor=west,inner sep=2pt] (gk) at (0,0) {$G(\vec k,\omega)=\big[\omega+i\delta-H(\vec k)\big]^{-1}$};
+ \node[anchor=north,font=\scriptsize,mygraydark] at (gk.south |- 0,-0.5) {momentum space: immediate from $H(\vec k)$};
+ % real space: what a local impurity needs
+ \node[anchor=west,inner sep=2pt] (gr) at (6.45,0) {$G(\vec r,\omega)=\displaystyle\int_{\rm BZ}\!\frac{d^2k}{(2\pi)^2}\;e^{i\vec k\cdot\vec r}\,G(\vec k,\omega)$};
+ \node[anchor=north,font=\scriptsize,mygraydark] at (gr.south |- 0,-0.5) {real space: a 2D integral at every energy};
+ \draw[->,>=stealth,thick,mygraydark] (gk.east) -- node[above,font=\scriptsize,align=center]{the impurity\\ is local} (gr.west);
+\end{tikzpicture}\par
+\vspace{-0.2cm}
 \begin{columns}[T]
-\begin{column}{0.58\textwidth}
-\vspace{0.3cm}
+\begin{column}{0.54\textwidth}
 \centering\includegraphics[width=\linewidth]{figures/fig2_blg_ldos_comparison.pdf}
-{\tiny\color{mygray} LDoS on an unstacked site (A1/B2). $\delta_{1,2}$: two Lorentzian broadenings\par}
+{\tiny\color{mygray} LDoS on an unstacked site (A1/B2). $\delta_{1,2}$: two broadenings of the 2D integral\par}
 \end{column}
-\begin{column}{0.40\textwidth}
-\vspace{0.9cm}
+\begin{column}{0.42\textwidth}
+\vspace{0.6cm}
 NRG: logarithmic energy grid,\\ down to \colorbox{citron!40}{\mystrut far below 1 meV}\par
-\vspace{0.5cm}
+\vspace{0.45cm}
 van Hove peak:\\ $\sim 10^{-4}$ of the Brillouin zone\par
-\vspace{0.5cm}
-Recursive Green's functions:\\ smooth, peak resolved\par
+\vspace{0.45cm}
+Recursive Green's functions (RGF):\\ smooth, peak resolved\par
 \end{column}
 \end{columns}
 \onslide<2->{\tk{Direct integration is noisy: unsuitable for the logarithmic grid of NRG}}
 \end{frame}
-% Notes: The inset is the meV window around the van Hove peak at 1.6 meV.
+% Notes: Why an integral at all: in momentum space G(k) is just the inverse of omega - H(k). But the impurity sits on one site, so we need G in real space: a Fourier transform, i.e. a 2D Brillouin-zone integral, at every energy. Its imaginary part is the local (r = 0) or non-local DoS.
+% Notes: The inset is the meV window around the van Hove peak at 1.6 meV, which occupies about 1e-4 of the Brillouin zone.
 % Notes: Direct 2D integration: the broad broadening smears the van Hove peak; the small broadening is noisy at all energies.
-% Notes: Recursion with an adaptive broadening (1e-5 below 0.2 meV, 0.05|omega| up to 20 meV, 1e-3 above) is smooth and resolves the peak.
+% Notes: Recursion with an adaptive broadening (1e-5 below 0.2 meV, 0.05|omega| up to 20 meV, 1e-3 above) is smooth and resolves the peak: next slide.
 
 % ============================================================
 % 3c  Fast recursive Green's functions
